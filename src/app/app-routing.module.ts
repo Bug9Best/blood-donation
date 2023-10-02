@@ -27,11 +27,18 @@ const routes: Routes = [
         path: 'news',
         loadChildren: () => import('./pages/news/news.module').then(m => m.NewsModule)
       },
+      {
+        path: 'profile',
+        loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule)
+      },
+      {
+        path: 'history',
+        loadChildren: () => import('./pages/history/history.module').then(m => m.HistoryModule)
+      },
       // {
       //   path: 'not-found',
       //   // loadChildren: () => import('./pages/news/news.module').then(m => m.NewsModule)
       // },
-      { path: '**', redirectTo: 'not-found' }
     ]
   }
 ];
