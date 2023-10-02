@@ -79,7 +79,9 @@
 
             &.active-route {
                 font-weight: 700;
-                color: var(--primary-color);
+                color: white;
+                background-color: #ff7676;
+                transition: .2s ease-in-out all;
             }
 
             &:hover {
@@ -88,7 +90,7 @@
 
             &:focus {
                 color: white;
-                background-color: #ff8080;
+                background-color: #ff7676;
             }
         }
 
