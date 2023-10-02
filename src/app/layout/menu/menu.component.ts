@@ -57,7 +57,7 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'ประวัติการบริจาคเลือด',
                         icon: 'pi pi-fw pi-cog',
-                        routerLink: ['/config/vitalsigns']
+                        routerLink: ['/history']
                     },
                 ]
             },
