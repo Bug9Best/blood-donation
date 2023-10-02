@@ -35,6 +35,10 @@ const routes: Routes = [
         path: 'history',
         loadChildren: () => import('./pages/history/history.module').then(m => m.HistoryModule)
       },
+      {
+        path: 'notification',
+        loadChildren: () => import('./pages/notification/notification.module').then(m => m.NotificationModule)
+      },
       // {
       //   path: 'not-found',
       //   // loadChildren: () => import('./pages/news/news.module').then(m => m.NewsModule)
