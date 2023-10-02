@@ -57,6 +57,8 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 import { OrganizationChartModule } from 'primeng/organizationchart';
 import { SliderModule } from 'primeng/slider';
 import { SkeletonModule } from 'primeng/skeleton';
+import { ChipModule } from 'primeng/chip';
+
 
 let modules = [
   ButtonModule,
@@ -114,7 +116,8 @@ let modules = [
   PanelMenuModule,
   OrganizationChartModule,
   SliderModule,
-  SkeletonModule
+  SkeletonModule,
+  ChipModule
 ]
 
 @NgModule({
