@@ -52,7 +52,7 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'ประวัติส่วนตัว',
                         icon: 'pi pi-fw pi-user',
-                        routerLink: ['/config/profile']
+                        routerLink: ['/profile']
                     },
                     {
                         label: 'ประวัติการบริจาคเลือด',
