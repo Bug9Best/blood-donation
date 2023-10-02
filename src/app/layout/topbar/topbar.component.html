@@ -17,7 +17,8 @@
 
     <div #topbarmenu class="layout-topbar-menu"
         [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
-        <button class="p-link layout-topbar-button mt-1 mr-2">
+        <button class="p-link layout-topbar-button mt-1 mr-2"
+        routerLink="/notification">
             <i class="pi pi-bell"></i>
             <span>Notification</span>
         </button>
