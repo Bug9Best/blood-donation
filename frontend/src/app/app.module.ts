@@ -7,10 +7,14 @@ import { AppComponent } from './app.component';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { PrimeNGModule } from './modules/primeng.module';
 import { AppLayoutModule } from './layout/layout.module';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SigninComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppLayoutComponent } from './layout/layout.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   {
-    path: '', component: AppLayoutComponent,
+    path: '',
+    component: AppLayoutComponent,
     children: [
       { path: '', redirectTo: 'appointment', pathMatch: 'full' },
       {
@@ -39,12 +42,21 @@ const routes: Routes = [
         path: 'notification',
         loadChildren: () => import('./pages/notification/notification.module').then(m => m.NotificationModule)
       },
+
       // {
       //   path: 'not-found',
       //   // loadChildren: () => import('./pages/news/news.module').then(m => m.NewsModule)
       // },
     ]
-  }
+  },
+  {
+    path: 'signin',
+    component: SigninComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
+  },
 ];
 
 @NgModule({
