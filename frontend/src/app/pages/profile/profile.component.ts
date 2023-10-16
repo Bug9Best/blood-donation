@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
+  editMode: boolean = false;
+
+  editProfile() {
+    this.editMode = true;
+  }
 
 }

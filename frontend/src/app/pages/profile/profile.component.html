@@ -1,0 +1,75 @@
+<div class="content-conatiner">
+  <div class="flex align-content-center justify-content-between font-bold text-xl">
+    <div class="mt-2">
+      Profile
+    </div>
+    <div>
+      <button 
+        label="Edit" 
+        icon="pi pi-pencil" 
+        class="p-button-outlined p-button-rounded p-button-secondary p-button-sm" 
+        (onClick)="editProfile()"
+        pButton pRipple>
+      </button>
+    </div>
+  </div>
+  <p-divider></p-divider>
+
+  <div class="grid">
+    <div class="col-3">
+      <p-avatar 
+        class="flex justify-content-center"
+        shape="circle" 
+        [style]="{width : '200px', height : '200px'}">
+      </p-avatar>
+      <div class="flex justify-content-center mt-2">
+        <button
+          label="เปลี่ยนรูปประจำตัว" 
+          icon="pi pi-pencil" 
+          class="p-button-primary p-button-rounded p-button-sm" 
+          (onClick)="editProfile()"
+          pButton pRipple>
+        </button>
+      </div>
+    </div>
+
+    <div class="col-9">
+      <div class="grid mb-2">
+        <div class="col-12 font-bold">
+          คำนำหน้าชื่อ
+        </div>
+        <div class="col-12 -mt-2">
+          <input type="text" pInputText>
+        </div>
+      </div>
+
+      <div class="grid mb-2">
+        <div class="col-12 font-bold">
+          ชื่อ
+        </div>
+        <div class="col-12 -mt-2">
+          <input type="text" pInputText>
+        </div>
+      </div>
+
+      <div class="grid mb-2">
+        <div class="col-12 font-bold">
+          ชื่อกลาง (ถ้ามี)
+        </div>
+        <div class="col-12 -mt-2">
+          <input type="text" pInputText>
+        </div>
+      </div>
+
+
+      <div class="grid mb-2">
+        <div class="col-12 font-bold">
+          นามสกุล
+        </div>
+        <div class="col-12 -mt-2">
+          <input type="text" pInputText>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
