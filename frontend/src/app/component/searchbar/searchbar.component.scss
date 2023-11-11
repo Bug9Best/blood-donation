@@ -1,0 +1,25 @@
+.primary-button {
+    min-width: 8rem;
+    border-radius: 0.5rem;
+    border: 0;
+    background-color: #ff7676;
+    transition: all 0.2s ease-in-out;
+}
+
+.primary-button:hover {
+    background-color: #ff7676da;
+    color: white;
+}
+
+.primary-button:active {
+    outline: 2px solid #ff7676da;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+.primary-button:focus {
+    outline: 2px solid #ff767680;
+    background-color: #ff7676da;
+    box-shadow: none;
+    outline-offset: 2px;
+}

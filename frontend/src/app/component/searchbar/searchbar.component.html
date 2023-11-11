@@ -1,0 +1,18 @@
+<div class="flex">
+  <div class="p-input-icon-left w-full">
+    <i class="pi pi-search"></i>
+    <input pInputText 
+      type="text" 
+      placeholder="ค้นหาสถานที่"
+      (keyup.enter)="search()"
+      [(ngModel)]="keyWord" />
+  </div>
+  <div class="ml-2">
+    <button pButton 
+      label="ค้นหา" 
+      icon="pi pi-search" 
+      class="primary-button"
+      (click)="search()">
+    </button>
+  </div>
+</div>
