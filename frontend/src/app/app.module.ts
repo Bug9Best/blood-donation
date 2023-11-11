@@ -9,8 +9,7 @@ import { PrimeNGModule } from './modules/primeng.module';
 import { AppLayoutModule } from './layout/layout.module';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
-
-import { GoogleMapsModule, } from '@angular/google-maps'
+import { GoogleMapsModule, } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,7 @@ import { GoogleMapsModule, } from '@angular/google-maps'
     BrowserAnimationsModule,
     PrimeNGModule,
     AppLayoutModule,
-    GoogleMapsModule
+    GoogleMapsModule,
   ],
   providers: [
     MessageService,
