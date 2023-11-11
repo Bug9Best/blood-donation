@@ -1,0 +1,55 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String    @id @default(auto()) @map("_id") @db.ObjectId
+  name              String?
+  updatedAt         DateTime  @updatedAt
+  createdAt         DateTime  @default(now())
+
+  room_user1        Conversations[]    @relation("room_user1")
+  room_user2        Conversations[]    @relation("room_user2")
+  message_receiver  Message[] @relation("message_receiver")
+  message_sender    Message[] @relation("message_sender")
+
+  @@map("users")
+}
+
+
+model Conversations {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  user1      User    @relation("room_user1", fields: [userId1], references: [id])
+  user2      User    @relation("room_user2", fields: [userId2], references: [id])
+  userId1    String   @db.ObjectId
+  userId2    String   @db.ObjectId
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  messages  Message[]
+
+  @@map("conversations")
+}
+
+model Message {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  content    String
+  receiver   User     @relation("message_receiver", fields: [receiverId], references: [id])
+  sender   User       @relation("message_sender", fields: [senderId], references: [id])
+  receiverId String   @db.ObjectId
+  senderId   String   @db.ObjectId 
+  conversations       Conversations     @relation(fields: [conversationId], references: [id])
+  conversationId     String   @db.ObjectId
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("messages")
+}

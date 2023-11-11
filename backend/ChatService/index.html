@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Socket.IO</title>
+    </head>
+    <body>
+        <h3>Clock</h3>
+        <div id="date"></div>
+        <h3>CPU</h3>
+        <div id="cpu"></div>
+        <h3>Memory</h3>
+        <div id="memory"></div>
+        <h3>Disk</h3>
+        <div id="disk"></div>
+        <script>
+          const socket = new WebSocket('ws://localhost:3000');
+    
+          socket.addEventListener('open', (event) => {
+            console.log('Connected to WebSocket server');
+            socket.send('Hello, server!');
+          });
+    
+          socket.addEventListener('message', (event) => {
+            console.log('Message from server:', event.data);
+          });
+        </script>
+</body>
+</html>
