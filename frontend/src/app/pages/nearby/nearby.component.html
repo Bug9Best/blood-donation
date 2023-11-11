@@ -1,3 +1,23 @@
 <div class="content-conatiner">
-    <p>nearby works!</p>
+  <page-title [title]="'ศูนย์บริจาคเลือดใกล้ฉัน'"></page-title>
+  <app-searchbar (onSearch)="onSearch($event)">
+  </app-searchbar>
+
+  <p-divider></p-divider>
+
+  <div class="w-full h-30rem">
+    <google-map 
+      height="100%"
+      width="100%"
+      [options]="options">
+    </google-map>
+  </div>
+
+  <p-divider></p-divider>
+
+  <ng-container *ngFor="let item of listArea">
+    <div class="shadow-2 p-3 border-round-md mb-2">
+      asd
+    </div>     
+  </ng-container>
 </div>
