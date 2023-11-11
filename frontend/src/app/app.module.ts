@@ -10,6 +10,8 @@ import { AppLayoutModule } from './layout/layout.module';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 
+import { GoogleMapsModule, } from '@angular/google-maps'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     BrowserAnimationsModule,
     PrimeNGModule,
     AppLayoutModule,
+    GoogleMapsModule
   ],
   providers: [
     MessageService,
