@@ -3,7 +3,6 @@ package com.example.Bloodbank.command;
 import lombok.Builder;
 import lombok.Data;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
-import org.springframework.data.annotation.Id;
 
 @Builder
 @Data

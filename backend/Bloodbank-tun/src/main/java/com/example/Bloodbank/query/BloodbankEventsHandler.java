@@ -17,17 +17,17 @@ public class BloodbankEventsHandler {
     }
 
     @EventHandler
-    public void onCreate(BloodbankCreatedEvent event) {
+    public void on(BloodbankCreatedEvent event) {
         BloodbankEntity bloodbankEntity = new BloodbankEntity();
         BeanUtils.copyProperties(event, bloodbankEntity);
-        System.out.println(event);
         bloodbankRepository.save(bloodbankEntity);
     }
 
     @EventHandler
-    public void onUpdate(BloodbankUpdatedEvent event) {
+    public void on(BloodbankUpdatedEvent event) {
         BloodbankEntity bloodbankEntity = new BloodbankEntity();
         BeanUtils.copyProperties(event, bloodbankEntity);
+        System.out.println(bloodbankEntity);
         bloodbankRepository.save(bloodbankEntity);
     }
 }

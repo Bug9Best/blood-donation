@@ -2,10 +2,8 @@ package com.example.Bloodbank.command;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
-@Getter
 @Builder
 @Data
 public class UpdateBloodbankCommand {

@@ -50,10 +50,10 @@ public class BloodbankCommandController {
         return result;
     }
 
-    @PutMapping("/{_id}")
-    public String updateBloodbank(@PathVariable String _id, @RequestBody UpdateBloodbankRestModel model) {
+    @PutMapping
+    public String updateBloodbank(@RequestBody UpdateBloodbankRestModel model) {
         UpdateBloodbankCommand command = UpdateBloodbankCommand.builder()
-                ._id(_id)
+                ._id(model.getId())
                 .name(model.getName())
                 .address(model.getAddress())
                 .contact_phone(model.getContact_phone())
@@ -72,6 +72,7 @@ public class BloodbankCommandController {
                 .build();
 
         String result;
+        System.out.println(command);
         try {
             result = commandGateway.sendAndWait(command);
         } catch (Exception e) {

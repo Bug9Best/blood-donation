@@ -7,6 +7,7 @@ import java.util.Optional;
 
 @Repository
 public interface BloodbankRepository extends MongoRepository<BloodbankEntity, String> {
+
     Optional<BloodbankEntity> findBy_id(String _id);
     BloodbankEntity findBy_idOrName(String _id, String name);
 

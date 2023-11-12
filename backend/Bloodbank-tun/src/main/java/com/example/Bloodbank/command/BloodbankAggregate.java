@@ -11,8 +11,9 @@ import org.springframework.beans.BeanUtils;
 
 @Aggregate
 public class BloodbankAggregate {
-    @AggregateIdentifier
     private String _id;
+    @AggregateIdentifier
+
     private String name;
     private String address;
     private String contact_phone;
@@ -32,18 +33,6 @@ public class BloodbankAggregate {
 
     @CommandHandler
     public BloodbankAggregate(CreateBloodbankCommand createBloodbankCommand) {
-        if (createBloodbankCommand.getAddress() == null || createBloodbankCommand.getAddress().isBlank()) {
-            throw new IllegalArgumentException("Address cannot be empty");
-        }
-
-        if (createBloodbankCommand.getName() == null || createBloodbankCommand.getName().isBlank()) {
-            throw new IllegalArgumentException("Name cannot be empty");
-        }
-
-        if (createBloodbankCommand.getContact_phone() == null || createBloodbankCommand.getContact_phone().isBlank()) {
-            throw new IllegalArgumentException("Phone number cannot be empty");
-        }
-
         BloodbankCreatedEvent bloodbankCreatedEvent = new BloodbankCreatedEvent();
         BeanUtils.copyProperties(createBloodbankCommand, bloodbankCreatedEvent);
         AggregateLifecycle.apply(bloodbankCreatedEvent);
@@ -51,21 +40,6 @@ public class BloodbankAggregate {
 
     @CommandHandler
     public BloodbankAggregate(UpdateBloodbankCommand updateBloodbankCommand) {
-        if (updateBloodbankCommand.get_id() == null) {
-            throw new IllegalArgumentException("Id cannot be empty");
-        }
-        if (updateBloodbankCommand.getAddress() == null || updateBloodbankCommand.getAddress().isBlank()) {
-            throw new IllegalArgumentException("Address cannot be empty");
-        }
-
-        if (updateBloodbankCommand.getName() == null || updateBloodbankCommand.getName().isBlank()) {
-            throw new IllegalArgumentException("Name cannot be empty");
-        }
-
-        if (updateBloodbankCommand.getContact_phone() == null || updateBloodbankCommand.getContact_phone().isBlank()) {
-            throw new IllegalArgumentException("Phone number cannot be empty");
-        }
-
         BloodbankUpdatedEvent bloodbankUpdatedEvent = new BloodbankUpdatedEvent();
         BeanUtils.copyProperties(updateBloodbankCommand, bloodbankUpdatedEvent);
         AggregateLifecycle.apply(bloodbankUpdatedEvent);
@@ -112,4 +86,5 @@ public class BloodbankAggregate {
         this.blood_required_o = bloodbankUpdatedEvent.getBlood_required_o();
         this.blood_required_ab = bloodbankUpdatedEvent.getBlood_required_ab();
     }
+
 }
