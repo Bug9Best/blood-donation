@@ -7,15 +7,14 @@
       <div class="col-12">
         <div class="flex flex-column align-content-start">
           <div class="text-2xl font-bold">
-            ศูนย์รับบริจาคเลือดศิริราช
+            {{ selectedLocation?.name }}
           </div>
           <div class="mt-2 text-lg">
-            อาคารนวมินทรบพิตร ๘๔ พรรษา ชั้น 3 โรงพยาบาลศิริราช เลขที่ 2 ถนนวังหลัง
-            แขวงศิริราช เขตบางกอกน้อย กรุงเทพฯ 10700
+            {{ selectedLocation?.description }}
           </div>
 
           <div class="mt-2 text-gray-500">
-            เบอร์โทรศัพท์: 0-2419-7000 ต่อ 2210, 2211
+            เบอร์โทรศัพท์: {{ selectedLocation?.contact_phone }}
           </div>
         </div>
       </div>
@@ -25,42 +24,148 @@
   <p-divider></p-divider>
 
   <div class="grid-custom p-2">
-    <ng-container *ngFor="let item of [1,2,3,4]">
-      <div class="shadow-2 border-round-md">
-        <div class="flex flex-column align-items-center p-3">
-          <img src="assets/img/blood_{{item}}.png" alt="">
-          <div class="w-full flex justify-content-between mt-3">
-            <div class="text-md font-bold">
-              กรุ๊ปเลือด
-            </div>
-            <div class="text-md">
-              A(เอ)
-            </div>
+    <div class="shadow-2 border-round-md">
+      <div class="flex flex-column align-items-center p-3">
+        <img src="assets/img/blood_1.png" alt="">
+        <div class="w-full flex justify-content-between mt-3">
+          <div class="text-md font-bold">
+            กรุ๊ปเลือด
           </div>
-
-          <div class="w-full flex justify-content-between mt-3">
-            <div class="text-md font-bold">
-              ได้รับการบริจาค
-            </div>
-            <div class="text-md">
-              200 หน่วย
-            </div>
-          </div>
-
-          <div class="w-full flex justify-content-between mt-3">
-            <div class="text-md font-bold">
-              ความต้องการ
-            </div>
-            <div class="text-md">
-              1000 หน่วย/เดือน
-            </div>
-          </div>
-
-          <div class="w-full mt-3">
-            <p-progressBar [value]="80"></p-progressBar>
+          <div class="text-md">
+            A(เอ)
           </div>
         </div>
+
+        <div class="w-full flex justify-content-between mt-3">
+          <div class="text-md font-bold">
+            ได้รับการบริจาค
+          </div>
+          <div class="text-md">
+            {{ selectedLocation.blood_already_a }} หน่วย
+          </div>
+        </div>
+
+        <div class="w-full flex justify-content-between mt-3">
+          <div class="text-md font-bold">
+            ความต้องการ
+          </div>
+          <div class="text-md">
+            {{ selectedLocation.blood_required_a }} หน่วย/เดือน
+          </div>
+        </div>
+
+        <div class="w-full mt-3">
+          <p-progressBar [value]="percentA"></p-progressBar>
+        </div>
       </div>
-    </ng-container>
+    </div>
+
+    <div class="shadow-2 border-round-md">
+      <div class="flex flex-column align-items-center p-3">
+        <img src="assets/img/blood_2.png" alt="">
+        <div class="w-full flex justify-content-between mt-3">
+          <div class="text-md font-bold">
+            กรุ๊ปเลือด
+          </div>
+          <div class="text-md">
+            B(บี)
+          </div>
+        </div>
+
+        <div class="w-full flex justify-content-between mt-3">
+          <div class="text-md font-bold">
+            ได้รับการบริจาค
+          </div>
+          <div class="text-md">
+            {{ selectedLocation.blood_already_b }} หน่วย
+          </div>
+        </div>
+
+        <div class="w-full flex justify-content-between mt-3">
+          <div class="text-md font-bold">
+            ความต้องการ
+          </div>
+          <div class="text-md">
+            {{ selectedLocation.blood_required_b }} หน่วย/เดือน
+          </div>
+        </div>
+
+        <div class="w-full mt-3">
+          <p-progressBar [value]="percentB"></p-progressBar>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow-2 border-round-md">
+      <div class="flex flex-column align-items-center p-3">
+        <img src="assets/img/blood_3.png" alt="">
+        <div class="w-full flex justify-content-between mt-3">
+          <div class="text-md font-bold">
+            กรุ๊ปเลือด
+          </div>
+          <div class="text-md">
+            AB(เอบี)
+          </div>
+        </div>
+
+        <div class="w-full flex justify-content-between mt-3">
+          <div class="text-md font-bold">
+            ได้รับการบริจาค
+          </div>
+          <div class="text-md">
+            {{ selectedLocation.blood_already_ab }} หน่วย
+          </div>
+        </div>
+
+        <div class="w-full flex justify-content-between mt-3">
+          <div class="text-md font-bold">
+            ความต้องการ
+          </div>
+          <div class="text-md">
+            {{ selectedLocation.blood_required_ab }} หน่วย/เดือน
+          </div>
+        </div>
+
+        <div class="w-full mt-3">
+          <p-progressBar [value]="percentAB"></p-progressBar>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow-2 border-round-md">
+      <div class="flex flex-column align-items-center p-3">
+        <img src="assets/img/blood_4.png" alt="">
+        <div class="w-full flex justify-content-between mt-3">
+          <div class="text-md font-bold">
+            กรุ๊ปเลือด
+          </div>
+          <div class="text-md">
+            O(โอ)
+          </div>
+        </div>
+
+        <div class="w-full flex justify-content-between mt-3">
+          <div class="text-md font-bold">
+            ได้รับการบริจาค
+          </div>
+          <div class="text-md">
+            {{ selectedLocation.blood_already_o }} หน่วย
+          </div>
+        </div>
+
+        <div class="w-full flex justify-content-between mt-3">
+          <div class="text-md font-bold">
+            ความต้องการ
+          </div>
+          <div class="text-md">
+            {{ selectedLocation.blood_required_o }} หน่วย/เดือน
+          </div>
+        </div>
+
+        <div class="w-full mt-3">
+          <p-progressBar [value]="percentO"></p-progressBar>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

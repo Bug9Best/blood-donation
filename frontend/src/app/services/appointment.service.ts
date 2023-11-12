@@ -6,5 +6,4 @@ import { BaseService } from './base.service';
 })
 export class AppointmentService extends BaseService {
   public override path: string = 'api-appointment';
-
 }

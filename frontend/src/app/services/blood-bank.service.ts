@@ -5,6 +5,10 @@ import { BaseService } from './base.service';
   providedIn: 'root'
 })
 export class BloodBankService extends BaseService {
-  public override path: string = 'api-blood-bank';
+  public override path: string = 'bloodbank-service';
 
+  getBloodBank() {
+    console.log(this.getBaseUrl);
+    return this.http.get(this.getBaseUrl + '/bloodbanks');
+  }
 }

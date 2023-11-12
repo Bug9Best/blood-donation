@@ -10,7 +10,7 @@ export class BaseService {
     path: string = '_blank';
 
     constructor(
-        private http: HttpClient
+        public http: HttpClient
     ) { }
 
     get getBaseUrl(): string {
