@@ -42,3 +42,8 @@ input {
     color: white;
     background-color: #d75851;
 }
+
+.p-progressbar .p-progressbar-value {
+    background-image: linear-gradient(to right, #d75851 0%, #FB8983 80%);
+
+}
