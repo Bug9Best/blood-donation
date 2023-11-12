@@ -4,6 +4,6 @@ import { BaseService } from './base.service';
 @Injectable({
   providedIn: 'root'
 })
-export class LocationService extends BaseService {
-  public override path: string = 'api-location';
+export class NoticationService extends BaseService{
+  public override path: string = 'api-notification';
 }
