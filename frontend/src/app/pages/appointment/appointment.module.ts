@@ -4,6 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { PrimeNGModule } from 'src/app/modules/primeng.module';
 import { ThaiModule } from 'src/app/modules/thai.module';
 import { AppointmentComponent } from './appointment.component';
+import { PageTitleComponent } from 'src/app/component/page-title/page-title.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
+import { AppointmentQuestionComponent } from './appointment-question/appointment-question.component';
 
 const routes: Routes = [
   {
@@ -13,12 +17,19 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AppointmentComponent,
+    AppointmentFormComponent,
+    AppointmentQuestionComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule,
     PrimeNGModule,
-    ThaiModule
+    ThaiModule,
+    PageTitleComponent
   ]
 })
 export class AppointmentModule { }
