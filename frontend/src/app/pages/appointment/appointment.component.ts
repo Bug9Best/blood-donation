@@ -13,7 +13,7 @@ export enum StepAppoint {
   styleUrls: ['./appointment.component.scss']
 })
 export class AppointmentComponent {
-  curretstep: StepAppoint = StepAppoint.Defalut;
+  curretstep: StepAppoint = StepAppoint.Appointment;
   currentQuestion: number = 0;
 
   constructor(

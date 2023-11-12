@@ -1,0 +1,17 @@
+:host ::ng-deep .p-timeline-event-opposite,
+.p-timeline-event-content {
+    flex: 0;
+}
+
+:host ::ng-deep .p-card .p-card-body {
+    margin-bottom: 3rem;
+}
+
+:host ::ng-deep .p-timeline-event-marker {
+    background-color: red;
+}
+
+.custom-marker {
+    background-color: red;
+    color: white;
+}
