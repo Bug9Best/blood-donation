@@ -1,4 +1,4 @@
-package com.example.AuthService.pojo;
+package com.example.AuthService.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -6,10 +6,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 
-@Data // Plain Old Java Object
-@Document("User") // collection name (Data Model)
+@Data
+@Document("User")
 public class User implements Serializable {
-    @Id // key value (ObjectId for MongoDB)
+    @Id
     private String _id;
     private String firstname;
     private String lastname;
@@ -26,6 +26,7 @@ public class User implements Serializable {
     private String role;
 
     public User() {}
+
     public User(String firstname, String lastname,String password,String email, String phoneNumber, String bloodGroup, String gender, String dateOfBirth, float weight, float height, String congenitalDisease, String userImage, String role) {
         this.firstname = firstname;
         this.lastname = lastname;
