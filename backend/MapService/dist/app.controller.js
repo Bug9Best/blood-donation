@@ -21,8 +21,8 @@ let GoogleMapController = class GoogleMapController {
     constructor(googleMapService) {
         this.googleMapService = googleMapService;
     }
-    checkHealth() {
-        return 'OK';
+    async getLocations() {
+        return await this.googleMapService.getLocations();
     }
     async createLocation(data) {
         return await this.googleMapService.createLocation(data);
@@ -36,11 +36,11 @@ let GoogleMapController = class GoogleMapController {
 };
 exports.GoogleMapController = GoogleMapController;
 __decorate([
-    (0, common_1.Get)(),
+    (0, common_1.Get)(''),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], GoogleMapController.prototype, "checkHealth", null);
+    __metadata("design:returntype", Promise)
+], GoogleMapController.prototype, "getLocations", null);
 __decorate([
     (0, common_1.Post)(''),
     __param(0, (0, common_1.Body)()),

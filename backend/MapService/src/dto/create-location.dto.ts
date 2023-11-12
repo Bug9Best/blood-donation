@@ -5,12 +5,15 @@ export class CreateLocation {
     @ApiProperty()
     @IsString()
     name:string;
+
     @ApiProperty()
     @IsString()
     description:string;
+
     @ApiProperty()
     @IsNumber()
     longitude:number;
+    
     @ApiProperty()
     @IsNumber()
     latitude:number;

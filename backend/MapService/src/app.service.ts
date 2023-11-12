@@ -11,6 +11,10 @@ export class GoogleMapService {
   //import service
   constructor(private readonly prisma: PrismaService) {}
 
+  async getLocations(): Promise<any> {
+    return await this.prisma.location.findMany();
+  }
+
   async createLocation(data: any): Promise<any> {
     const isExit = await this.prisma.location.findUnique({
       where: {
