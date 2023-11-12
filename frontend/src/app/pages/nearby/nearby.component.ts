@@ -1,5 +1,6 @@
 import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
+import { Router } from '@angular/router';
 import { LocationService } from 'src/app/services/location.service';
 
 @Component({
@@ -25,6 +26,7 @@ export class NearbyComponent implements OnInit {
   };
 
   constructor(
+    private router: Router,
     private locationService: LocationService
   ) { }
 
@@ -54,6 +56,7 @@ export class NearbyComponent implements OnInit {
   }
 
   viewDetail(value: any) {
+    this.router.navigate(['/blood-bank', value.id])
   }
 
 }
