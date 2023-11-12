@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "it-find-job",
+  "private_key_id": "f70e726e24be318beefe7c36ff258fd88e0ad6fa",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCtj/x+JbgX2YYw\nBerP9qjKsp6lF/SsLa2Dag90Uqz7X0fw8AK/bdgStrjZsQHvgHA45o7L/GF/g3dC\nWRwMkJVxeWVsUd360PAbCk2bn5fjPwNpOs6Q6dGHgoQJqPWGKB4Cc6igVKnU81DH\n46jEn5DLb2GJ95DHA1+LFa+E/2wuoPp0RemR0owWNroGEu5LxG5bDDDCYnJd45s6\nSqljD0J7gtQS6cAkDW3I8tFbEROEWGd6NNF1L8IGTX2enVwxwqYnwc/FPb9W6I/f\n7Vu9cw/Z9K4Sl8gcbE4ex+A/spGD5VV5TEJNr8qy05nNFOPQ60tF2PWjOSdP5q6G\nAOMXLzgrAgMBAAECggEAAKpxGufxv9Om8W1BxTGJURqwoh/rjd3oRwnSDWLMvDaT\nmUPoDrZ1FW6ZzK5lneAIa1JjzpB8FFnZ6BUTiQnGJ/RsUyxIGD1wOLrjJ8Wboe6q\nMQvdkgd7bijE1CJrkQeZ0oDVPveH+j1hR2Zs4xkTPqDQH4h4ImzO87JaGW9ntzHk\nFv5JXO6Ayn7Oj4agSWqrlb4KdkcOa7NPXlq6Z65PcTfYad6E4QaVE2Gnbiw6knJc\nXs6Gp+D/yzNkJ0vV4pERoCftAjZa/olLj2p+gpI8g8vpfln70Pkj5rcYqFNAwvYA\nwmGBqfRYB9DOCm+nCWPVjhWD3p8D+wVHUQE/n1MLHQKBgQDmKKjcC8gjl1gLxbye\nA3citUrttyAMnfusb3DfvfDN8P9HDyfhnZockvtZX7Zfhb11OIyNLSo0FANdtmxm\nQ4DqcZz4D2ZL0ddG4SPU2R/RWX849MVL2/SnudhJSGOqM2E0nVq2XdES7QpTb/zx\nLjmxv0Tx+ssjTcRFbHKZDM3b/QKBgQDBDJrrqt2mFXKHPMtvzQgGUjUZUpOg+P94\nRBXgA5iQvKlr18CAnXjVsP3bEufGWMRy+HX5mBZXgZCLnrQvtciNVOpDp6sfHJWP\nWZoXHERTYjTMQUYh/YGDGlNhiP7DYsXLtTwdHSLFtHiy2UuAB3rid6QENGp1fwE0\nZjmCniGZRwKBgDb6iXOe4N0XnvGY93hrbX79/XsRXneFGYRUToszzRz0r5Yi2az8\nP78JoT71LRReVyZ0LqbenhE4oqE1HWnEQDxAjXV4AECmTJ1i1HNYtlAE5+4MEkEP\ntr6GF1NSFnSmt1ahK/UaLgIuW2QZATv/hcqe3PJMrU+umO7Ye/txYo9lAoGARO/m\nZp/WlNd11XtNPnheFDvJAGjvlP015VGS6jL+iTkF2x/pe0RAgTa6AEBJChhq1o+J\nOX8pA0ieQG2E9MCahHW9TjmSrwJ7GfyqPPR4JbqdFg99JugrFpERE3RjXYxpC6yF\ncfQUlbszmtJj1q1VIYgNxv6cwaZ/3KFgihdD8kMCgYBz7X/1xBaZsqwJ5mzz7Ek/\nsm50/IaG/zjivsSTHjCUp60Pz0QexeqQmCeqzaTgSGkV3Zm0wBqLGv2EtEH5jaq3\ng93Vhf+Nk7eNFy04FWlSMsyMlxd1uOaUX2IwtWQgNoCcKcnVMNzOdaueG6n0P1c8\n436VwWzD5cNrZryx8ulYRA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "thesis-find-job@it-find-job.iam.gserviceaccount.com",
+  "client_id": "106906884209248684135",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/thesis-find-job%40it-find-job.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
