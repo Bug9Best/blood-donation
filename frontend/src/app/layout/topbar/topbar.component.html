@@ -17,13 +17,15 @@
 
     <div #topbarmenu class="layout-topbar-menu"
         [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
-        <button class="p-link layout-topbar-button mt-1 mr-2"
-        routerLink="/notification">
+        <button class="p-link layout-topbar-button mt-1 mr-2" routerLink="/notification">
             <i class="pi pi-bell"></i>
             <span>Notification</span>
         </button>
-        <p-chip class="">
-            <div class="p-3 px-4">Natthaphon D. Best</div>
-        </p-chip>
+        <div class="flex justify-content-center align-items-center reverse-background border-round-xl cursor-pointer" (click)="menu.toggle($event)">
+            <div class="p-2 mx-4 font-bold text-lg">
+                Natthaphon D. Best
+            </div>
+        </div>
+        <p-menu #menu [model]="items" [popup]="true"></p-menu>
     </div>
 </div>
