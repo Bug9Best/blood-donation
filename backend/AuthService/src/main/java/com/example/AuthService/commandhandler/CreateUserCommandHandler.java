@@ -17,6 +17,7 @@ public class CreateUserCommandHandler {
     }
 
     public User handle(CreateUserCommand command) {
+        System.out.println(command.getUser());
         return userRepository.save(command.getUser());
     }
 }

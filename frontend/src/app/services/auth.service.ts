@@ -8,11 +8,11 @@ export class AuthService extends BaseService {
   public override path: string = 'auth-service';
 
   createUser(data: any) {
-    return this.http.post(this.getBaseUrl + '/addUser', data);
+    return this.http.post("http://localhost:8082/auth-service/addUser", data);
   }
 
   signin(data: any) {
-    return this.http.post(this.getBaseUrl + '/validatelogin', data);
+    return this.http.post("http://localhost:8082/auth-service/validatelogin", data);
   }
 
 }

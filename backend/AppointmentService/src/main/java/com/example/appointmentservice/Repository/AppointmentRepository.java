@@ -1,6 +1,6 @@
-package com.example.appointmentservice.Repository;
+package com.example.appointmentservice.repository;
 
-import com.example.appointmentservice.Pojo.Appointment;
+import com.example.appointmentservice.pojo.Appointment;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;

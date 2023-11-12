@@ -1,6 +1,6 @@
-package com.example.appointmentservice.Repository;
+package com.example.appointmentservice.repository;
 
-import com.example.appointmentservice.Pojo.Appointment;
+import com.example.appointmentservice.pojo.Appointment;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +17,8 @@ public class AppointmentService {
     }
 
     @RabbitListener(queues = "GetAppointment")
-    public List<Appointment> getAppointment(String id) {
-        return repository.findByUserId(id);
+    public List<Appointment> getAppointment(String userId) {
+        return repository.findByUserId(userId);
     }
 
     @RabbitListener(queues = "GetAllAppointment")

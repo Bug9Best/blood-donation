@@ -1,7 +1,7 @@
-package com.example.appointmentservice.Controller;
+package com.example.appointmentservice.controller;
 
-import com.example.appointmentservice.Pojo.Appointment;
-import com.example.appointmentservice.Repository.AppointmentService;
+import com.example.appointmentservice.pojo.Appointment;
+import com.example.appointmentservice.repository.AppointmentService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +21,8 @@ public class AppointmentController {
 
     @RequestMapping(value ="/appointment", method = RequestMethod.GET)
     public ResponseEntity<?> getAllAppointment() {
-        return ResponseEntity.ok(rabbitTemplate.convertSendAndReceive("Appointment", "getallappointment", "eiei"));
+        String test = "test";
+        return ResponseEntity.ok(rabbitTemplate.convertSendAndReceive("Appointment", "getallappointment", test));
     }
 
     @RequestMapping(value ="/appointment/{id}", method = RequestMethod.GET)
@@ -32,8 +33,14 @@ public class AppointmentController {
 
     @RequestMapping(value ="/appointment/create", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<?> createAppointment(@RequestBody Appointment appointment) {
-        System.out.println(appointment);
+    public ResponseEntity<?> createAppointment(@RequestBody Appointment model) {
+        Appointment appointment = Appointment.builder()
+                .userid(model.getUserid())
+                .appointment(model.getAppointment())
+                .location(model.getLocation())
+                .date(model.getDate())
+                .build();
+
         return ResponseEntity.ok(rabbitTemplate.convertSendAndReceive("Appointment", "createappointment", appointment));
     }
 

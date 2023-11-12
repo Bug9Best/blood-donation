@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   templateUrl: './appointment-form.component.html',
   styleUrls: ['./appointment-form.component.scss']
 })
-export class AppointmentFormComponent {
+export class AppointmentFormComponent implements OnInit {
 
   selectedTime?: number;
 
@@ -32,6 +32,12 @@ export class AppointmentFormComponent {
     date: new FormControl(new Date(), Validators.required),
     time: new FormControl('', Validators.required),
   });
+
+  constructor() { }
+
+  ngOnInit(): void {
+    localStorage.setItem('user', JSON.stringify(this.listTime));
+  }
 
   onSelectedTime(time: any) {
     this.selectedTime = time.id

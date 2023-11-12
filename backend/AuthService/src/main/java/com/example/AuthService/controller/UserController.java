@@ -19,7 +19,6 @@ public class UserController {
     }
 
 
-    @CrossOrigin
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<?> createUser(@RequestBody User user) {

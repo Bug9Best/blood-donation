@@ -28,8 +28,8 @@ export class SignupComponent implements OnInit {
 
 
   formData: FormGroup = new FormGroup({
-    firstName: new FormControl(null, Validators.required),
-    lastName: new FormControl(null, Validators.required),
+    firstname: new FormControl(null, Validators.required),
+    lastname: new FormControl(null, Validators.required),
     email: new FormControl(null, Validators.required),
     password: new FormControl(null, Validators.required),
     phoneNumber: new FormControl(null, Validators.required),
@@ -39,6 +39,7 @@ export class SignupComponent implements OnInit {
     weight: new FormControl(null, Validators.required),
     height: new FormControl(null, Validators.required),
     congenitalDisease: new FormControl(null, Validators.required),
+    role: new FormControl('USER', Validators.required),
   });
 
   constructor(
@@ -50,14 +51,15 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     if (!environment.production) {
       this.formData.patchValue({
-        firstName: "ณัฐพล",
-        lastName: "ดิษฐวิบูลย์",
+        firstname: "ณัฐพล",
+        lastname: "ดิษฐวิบูลย์",
         email: "Bug9Best@gmail.com",
         password: "Best1539.",
         phoneNumber: "0934422123",
         weight: 85.6,
         height: 186,
         congenitalDisease: "ไม่มี",
+
       });
     }
   }
