@@ -1,0 +1,105 @@
+
+<div [formGroup]="formData">
+  <div class="grid">
+    <div class="col-2">
+      <label class="required">
+        ชื่อ
+      </label>
+    </div>
+    <div class="col-10">
+      <input pInputText 
+        type="text" 
+        placeholder="ชื่อ"
+        formControlName="first_name">
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-2">
+      <label class="required">
+        นามสกุล
+      </label>
+    </div>
+    <div class="col-10">
+      <input pInputText 
+        type="text" 
+        placeholder="นามสกุล"
+        formControlName="last_name">
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-2">
+      <label class="required">
+        เลขบัตรประชาชน
+      </label>
+    </div>
+    <div class="col-10">
+      <p-inputMask 
+        mask="9-9999-99999-99-9"  
+        placeholder="เลขบัตรประชาชน"
+        [unmask]="true"
+        formControlName="citizen_id">
+      </p-inputMask>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-2">
+      <label class="required">
+        วัน/เวลาที่นัดหมาย
+      </label>
+    </div>
+    <div class="col-10">
+      <p-calendar 
+        styleClass="w-full" 
+        appendTo="body" 
+        [showBuddhistCalendar]="true"
+        formControlName="date">
+      </p-calendar>
+
+      <div class="grid mt-2">
+        <ng-container *ngFor="let item of listTime">
+          <div class=" col-3">
+            <div class="shadow-2 border-round-md p-3 cursor-pointer"
+            [ngClass]="{'selected-time': item.id === selectedTime}"
+            (click)="onSelectedTime(item)">
+              {{ item.time }}
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <p-divider></p-divider>
+  <div class="flex justify-content-center">
+    <img src="assets/img/blood.png" height="150">
+  </div>
+
+  <div class="grid">
+    <div class="col-8 col-offset-2">
+
+      <div class="flex shadow-2 border-round-md">
+        <div class="block"></div>
+        <div class="p-3">
+          "ท่านจำเป็นต้องให้ข้อมูลส่วนบุคคลที่ระบุถึงตัวตนของท่านในการเข้ารับบริการ
+          ข้อมูลส่วนบุคคลของท่านจะถูกเก็บรักษาไว้เป็นความลับตามมาตรฐานสากล และจะไม่ถูกนำไปเปิดเผยต่อสาธารณะ?
+        </div>
+      </div>
+
+      <div class="flex mt-5">
+        <button pButton pRipple
+          class="primary-button-outline w-full"
+          label="ยกเลิก"
+          (click)="cancel()">
+        </button>
+        <button pButton pRipple
+          class="primary-button w-full ml-2"
+          label="บันทึกการนัดหมาย"
+          (click)="save()">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
