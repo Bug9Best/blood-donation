@@ -17,4 +17,8 @@ export class CreateLocation {
     @ApiProperty()
     @IsNumber()
     latitude:number;
+
+    @ApiProperty()
+    @IsString()
+    contact_phone:string;
 }

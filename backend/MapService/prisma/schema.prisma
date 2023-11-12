@@ -15,6 +15,7 @@ model Location {
   name        String   @unique
   latitude    Float
   longtitude   Float
+  phone_number String
   description String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
