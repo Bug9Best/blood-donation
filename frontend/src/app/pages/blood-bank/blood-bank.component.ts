@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./blood-bank.component.scss']
 })
 export class BloodBankComponent {
+  keyword: string = ''
 
+  setKeyword(keyword: string) {
+    this.keyword = keyword
+  }
 }
