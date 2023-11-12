@@ -15,17 +15,22 @@ public class BloodbankAggregate {
     private String name;
     private String address;
     private String contact_phone;
-    private String blood_group;
-    private int blood_already;
-    private int blood_required;
+    private String blood_group_a;
+    private String blood_group_b;
+    private String blood_group_o;
+    private String blood_group_ab;
+    private int blood_already_a;
+    private int blood_already_b;
+    private int blood_already_o;
+    private int blood_already_ab;
+    private int blood_required_a;
+    private int blood_required_b;
+    private int blood_required_o;
+    private int blood_required_ab;
     public BloodbankAggregate(){}
 
     @CommandHandler
     public BloodbankAggregate(CreateBloodbankCommand createBloodbankCommand){
-        if(createBloodbankCommand.getBlood_group() == null || createBloodbankCommand.getBlood_group().isBlank()){
-            throw new IllegalArgumentException("Group cannot be empty");
-        }
-
         if(createBloodbankCommand.getAddress() == null || createBloodbankCommand.getAddress().isBlank()){
             throw new IllegalArgumentException("Address cannot be empty");
         }
@@ -34,21 +39,12 @@ public class BloodbankAggregate {
             throw new IllegalArgumentException("Name cannot be empty");
         }
 
-        if(createBloodbankCommand.getBlood_required() <= 0){
-            throw new IllegalArgumentException("Needed amount cannot be less than or equal to zero");
-        }
-
-        if(createBloodbankCommand.getBlood_already() <= 0){
-            throw new IllegalArgumentException("Amount cannot be less than or equal to zero");
-        }
-
         if(createBloodbankCommand.getContact_phone() == null || createBloodbankCommand.getContact_phone().isBlank()){
             throw new IllegalArgumentException("Phone number cannot be empty");
         }
         BloodbankCreatedEvent bloodbankCreatedEvent = new BloodbankCreatedEvent();
         BeanUtils.copyProperties(createBloodbankCommand, bloodbankCreatedEvent);
         AggregateLifecycle.apply((bloodbankCreatedEvent));
-
     }
 
     @EventSourcingHandler
@@ -58,8 +54,17 @@ public class BloodbankAggregate {
         this.name = bloodbankCreatedEvent.getName();
         this.address = bloodbankCreatedEvent.getAddress();
         this.contact_phone = bloodbankCreatedEvent.getContact_phone();
-        this.blood_group = bloodbankCreatedEvent.getBlood_group();
-        this.blood_already = bloodbankCreatedEvent.getBlood_already();
-        this.blood_required = bloodbankCreatedEvent.getBlood_required();
+        this.blood_group_a = bloodbankCreatedEvent.getBlood_group_a();
+        this.blood_group_b = bloodbankCreatedEvent.getBlood_group_b();
+        this.blood_group_o = bloodbankCreatedEvent.getBlood_group_o();
+        this.blood_group_ab = bloodbankCreatedEvent.getBlood_group_ab();
+        this.blood_already_a = bloodbankCreatedEvent.getBlood_already_a();
+        this.blood_already_b = bloodbankCreatedEvent.getBlood_already_b();
+        this.blood_already_o = bloodbankCreatedEvent.getBlood_already_o();
+        this.blood_already_ab = bloodbankCreatedEvent.getBlood_already_ab();
+        this.blood_required_a = bloodbankCreatedEvent.getBlood_required_a();
+        this.blood_required_b = bloodbankCreatedEvent.getBlood_required_b();
+        this.blood_required_o = bloodbankCreatedEvent.getBlood_required_o();
+        this.blood_required_ab = bloodbankCreatedEvent.getBlood_required_ab();
     }
 }

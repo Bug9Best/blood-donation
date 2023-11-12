@@ -31,9 +31,18 @@ public class BloodbankCommandController {
                 .name(model.getName())
                 .address(model.getAddress())
                 .contact_phone(model.getContact_phone())
-                .blood_group(model.getBlood_group())
-                .blood_already(model.getBlood_already())
-                .blood_required(model.getBlood_required())
+                .blood_group_a(model.getBlood_group_a())
+                .blood_group_b(model.getBlood_group_b())
+                .blood_group_o(model.getBlood_group_o())
+                .blood_group_ab(model.getBlood_group_ab())
+                .blood_already_a(model.getBlood_already_a())
+                .blood_already_b(model.getBlood_already_b())
+                .blood_already_o(model.getBlood_already_o())
+                .blood_already_ab(model.getBlood_already_ab())
+                .blood_required_a(model.getBlood_required_a())
+                .blood_required_b(model.getBlood_required_b())
+                .blood_required_o(model.getBlood_required_o())
+                .blood_required_ab(model.getBlood_required_ab())
                 .build();
         String result;
         try {
