@@ -44,6 +44,7 @@ export class BloodBankListComponent {
   }
 
   viewDetail(value: any) {
-    this.router.navigate(['/blood-bank/detail'], { queryParams: { id: value } })
+    console.log(value);
+    this.router.navigate(['/blood-bank', value.id])
   }
 }
