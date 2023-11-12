@@ -8,9 +8,9 @@ import { GoogleMapService } from './app.service';
 export class GoogleMapController {
   constructor(private readonly googleMapService: GoogleMapService) {}
 
-  @Get()
-  checkHealth(): string {
-    return 'OK';
+  @Get('')
+  async getLocations(): Promise<any> {
+    return await this.googleMapService.getLocations();
   }
 
   @Post('')
@@ -18,9 +18,9 @@ export class GoogleMapController {
     return await this.googleMapService.createLocation(data);
   }
 
-  @Get(':name')
-  async getLocation(@Param('name') name: string): Promise<any> {
-    return await this.googleMapService.getLocation(name);
+  @Get(':locationId')
+  async getLocation(@Param('locationId') locationId: string): Promise<any> {
+    return await this.googleMapService.getLocation(locationId);
   }
 
   @Delete(':locationId')

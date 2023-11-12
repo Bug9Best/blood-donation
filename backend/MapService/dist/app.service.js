@@ -16,6 +16,9 @@ let GoogleMapService = class GoogleMapService {
     constructor(prisma) {
         this.prisma = prisma;
     }
+    async getLocations() {
+        return await this.prisma.location.findMany();
+    }
     async createLocation(data) {
         const isExit = await this.prisma.location.findUnique({
             where: {
