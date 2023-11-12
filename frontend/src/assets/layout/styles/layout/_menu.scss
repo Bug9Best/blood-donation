@@ -80,7 +80,7 @@
             &.active-route {
                 font-weight: 700;
                 color: white;
-                background-color: #ff7676;
+                background-image: linear-gradient(to right, #d75851 0%, #FB8983 80%);
                 transition: .2s ease-in-out all;
             }
 
@@ -90,7 +90,7 @@
 
             &:focus {
                 color: white;
-                background-color: #ff7676;
+                background-image: linear-gradient(to right, #d75851 0%, #FB8983 80%);
             }
         }
 
