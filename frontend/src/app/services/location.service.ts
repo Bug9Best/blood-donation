@@ -5,6 +5,6 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class MapService extends BaseService {
+export class LocationService extends BaseService {
   public override path: string = 'api-location';
 }

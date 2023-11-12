@@ -1,6 +1,6 @@
 import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
-import { MapService } from 'src/app/services/map.service';
+import { LocationService } from 'src/app/services/location.service';
 
 @Component({
   selector: 'app-nearby',
@@ -25,7 +25,7 @@ export class NearbyComponent implements OnInit {
   };
 
   constructor(
-    private mapService: MapService
+    private locationService: LocationService
   ) { }
 
   ngOnInit(): void {
@@ -33,7 +33,7 @@ export class NearbyComponent implements OnInit {
   }
 
   getLocation() {
-    this.mapService.getAll().subscribe(res => {
+    this.locationService.getAll().subscribe(res => {
       this.listLocaion = res
     })
   }
