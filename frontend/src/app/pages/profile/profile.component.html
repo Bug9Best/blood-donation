@@ -7,6 +7,92 @@
     (onClick)="editProfile()">
   </page-title>
 
+  <ng-container *ngIf="!editMode">
+    <div class="shadow-2 border-round-md p-3">
+      <div class="grid">
+        <div class="col-3">
+          <img src="assets/img/blood.png" class="w-full">
+        </div>
+        <div class="col-9">
+          <div class="flex flex-column">
+            <div class="grid">
+              <div class="col-2 font-bold">
+                ชื่อ-สกุล:
+              </div>
+              <div class="col-10">
+                นายสมชาย ใจดี
+              </div>
+            </div>
+            <div class="grid">
+              <div class="col-2 font-bold">
+                อีเมล:
+              </div>
+              <div class="col-10">
+                testgmail.com
+              </div>
+            </div>
+            <div class="grid">
+              <div class="col-2 font-bold">
+                เบอร์โทรศัพท์:
+              </div>
+              <div class="col-10">
+                089-999-9999
+              </div>
+            </div>
+            <div class="grid">
+              <div class="col-2 font-bold">
+                วันเดือนปีเกิด:
+              </div>
+              <div class="col-10">
+                01/01/1990
+              </div>
+            </div>
+            <div class="grid">
+              <div class="col-2 font-bold">
+                เพศ:
+              </div>
+              <div class="col-10">
+                ชาย
+              </div>
+            </div>
+            <div class="grid">
+              <div class="col-2 font-bold">
+                กรุ๊ปเลือด:
+              </div>
+              <div class="col-10">
+                A
+              </div>
+            </div>
+            <div class="grid">
+              <div class="col-2 font-bold">
+                น้ำหนัก:
+              </div>
+              <div class="col-10">
+                60
+              </div>
+            </div>
+            <div class="grid">
+              <div class="col-2 font-bold">
+                ส่วนสูง:
+              </div>
+              <div class="col-10">
+                170
+              </div>
+            </div>
+            <div class="grid">
+              <div class="col-2 font-bold">
+                โรคประจำตัว:
+              </div>
+              <div class="col-10">
+                ไม่มี
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
   <ng-container *ngIf="editMode">
     <div [formGroup]="formData">
       <div class="grid">
