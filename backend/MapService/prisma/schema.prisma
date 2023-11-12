@@ -14,7 +14,7 @@ model Location {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   name        String   @unique
   latitude    Float
-  longitude   Float
+  longtitude   Float
   description String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

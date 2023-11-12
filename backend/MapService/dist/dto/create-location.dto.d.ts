@@ -1,6 +1,6 @@
 export declare class CreateLocation {
     name: string;
     description: string;
-    longitude: number;
+    longtitude: number;
     latitude: number;
 }
