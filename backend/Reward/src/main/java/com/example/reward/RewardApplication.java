@@ -1,15 +1,17 @@
-package com.example.lab66;
+package com.example.reward;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableCaching
+@EnableDiscoveryClient
 @SpringBootApplication
-public class Lab66Application {
+public class RewardApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Lab66Application.class, args);
+        SpringApplication.run(RewardApplication.class, args);
     }
 
 }
