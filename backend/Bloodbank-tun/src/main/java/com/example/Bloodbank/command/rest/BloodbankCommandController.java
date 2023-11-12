@@ -29,7 +29,11 @@ public class BloodbankCommandController {
         CreateBloodbankCommand command = CreateBloodbankCommand.builder()
                 ._id(UUID.randomUUID().toString())
                 .name(model.getName())
-                .amount(model.getAmount())
+                .address(model.getAddress())
+                .contact_phone(model.getContact_phone())
+                .blood_group(model.getBlood_group())
+                .blood_already(model.getBlood_already())
+                .blood_required(model.getBlood_required())
                 .build();
         String result;
         try {

@@ -13,19 +13,38 @@ public class BloodbankAggregate {
     @AggregateIdentifier
     private String _id;
     private String name;
-    private int amount;
+    private String address;
+    private String contact_phone;
+    private String blood_group;
+    private int blood_already;
+    private int blood_required;
     public BloodbankAggregate(){}
 
     @CommandHandler
     public BloodbankAggregate(CreateBloodbankCommand createBloodbankCommand){
+        if(createBloodbankCommand.getBlood_group() == null || createBloodbankCommand.getBlood_group().isBlank()){
+            throw new IllegalArgumentException("Group cannot be empty");
+        }
+
+        if(createBloodbankCommand.getAddress() == null || createBloodbankCommand.getAddress().isBlank()){
+            throw new IllegalArgumentException("Address cannot be empty");
+        }
+
         if(createBloodbankCommand.getName() == null || createBloodbankCommand.getName().isBlank()){
             throw new IllegalArgumentException("Name cannot be empty");
         }
 
-        if(createBloodbankCommand.getAmount() <= 0){
+        if(createBloodbankCommand.getBlood_required() <= 0){
+            throw new IllegalArgumentException("Needed amount cannot be less than or equal to zero");
+        }
+
+        if(createBloodbankCommand.getBlood_already() <= 0){
             throw new IllegalArgumentException("Amount cannot be less than or equal to zero");
         }
 
+        if(createBloodbankCommand.getContact_phone() == null || createBloodbankCommand.getContact_phone().isBlank()){
+            throw new IllegalArgumentException("Phone number cannot be empty");
+        }
         BloodbankCreatedEvent bloodbankCreatedEvent = new BloodbankCreatedEvent();
         BeanUtils.copyProperties(createBloodbankCommand, bloodbankCreatedEvent);
         AggregateLifecycle.apply((bloodbankCreatedEvent));
@@ -37,6 +56,10 @@ public class BloodbankAggregate {
         System.out.println("ON AGGREGATE");
         this._id = bloodbankCreatedEvent.get_id();
         this.name = bloodbankCreatedEvent.getName();
-        this.amount = bloodbankCreatedEvent.getAmount();
+        this.address = bloodbankCreatedEvent.getAddress();
+        this.contact_phone = bloodbankCreatedEvent.getContact_phone();
+        this.blood_group = bloodbankCreatedEvent.getBlood_group();
+        this.blood_already = bloodbankCreatedEvent.getBlood_already();
+        this.blood_required = bloodbankCreatedEvent.getBlood_required();
     }
 }

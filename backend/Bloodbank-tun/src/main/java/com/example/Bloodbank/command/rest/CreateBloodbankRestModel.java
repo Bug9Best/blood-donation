@@ -5,5 +5,9 @@ import lombok.Data;
 @Data
 public class CreateBloodbankRestModel {
     private String name;
-    private int amount;
+    private String address;
+    private String contact_phone;
+    private String blood_group;
+    private int blood_already;
+    private int blood_required;
 }

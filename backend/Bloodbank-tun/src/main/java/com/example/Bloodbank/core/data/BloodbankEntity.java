@@ -19,7 +19,10 @@ public class BloodbankEntity implements Serializable {
     @Id
     @Column(unique = true)
     private String _id;
-
     private String name;
-    private int amount;
+    private String address;
+    private String contact_phone;
+    private String blood_group;
+    private int blood_already;
+    private int blood_required;
 }

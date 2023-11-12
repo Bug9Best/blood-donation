@@ -19,7 +19,7 @@ public class BloodbankQueryHandler {
     }
 
     @QueryHandler
-    public List<BloodbankRestModel> findProduct(FindBloodbankQuery query){
+    public List<BloodbankRestModel> findBloodbank(FindBloodbankQuery query){
         List<BloodbankRestModel> bloodbankRest = new ArrayList<>();
         List<BloodbankEntity> storedBloodbank = bloodbankRepository.findAll();
         for (BloodbankEntity bloodbankEntity : storedBloodbank) {
