@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PrimeNGModule } from 'src/app/modules/primeng.module';
 import { ThaiModule } from 'src/app/modules/thai.module';
 import { RewardComponent } from './reward.component';
+import { PageTitleComponent } from 'src/app/component/page-title/page-title.component';
 
 const routes: Routes = [
   {
@@ -13,12 +14,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    RewardComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     PrimeNGModule,
-    ThaiModule
+    ThaiModule,
+    PageTitleComponent
   ]
 })
 export class RewardModule { }
