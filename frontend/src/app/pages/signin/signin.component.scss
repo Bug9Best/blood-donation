@@ -1,0 +1,70 @@
+ .text-custom {
+     background: -webkit-linear-gradient(#d75851, #FB8983);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+ }
+
+ .text-custom2 {
+     background: -webkit-linear-gradient(#FB8983, #d75851);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+ }
+
+ .screen-background {
+     background-image: linear-gradient(to right, #d56f6a 0%, #fb9a95 51%);
+ }
+
+ .primary-button {
+    margin: 0 0.5rem 0 0;
+    min-width: 8rem;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.25rem;
+    border: 0;
+    background-image: linear-gradient(to right, #d75851 0%, #FB8983 51%);
+    transition: all 0.2s ease-in-out;
+}
+
+.primary-button:hover {
+    background-image: linear-gradient(to right, #d75851 0%, #FB8983 51%);
+    color: white;
+}
+
+.primary-button:active {
+    outline: 2px solid #ff7676da;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+.primary-button:focus {
+    outline: 2px solid #ff767680;
+    background-image: linear-gradient(to right, #d75851 0%, #FB8983 51%);
+    box-shadow: none;
+    outline-offset: 2px;
+}
+
+.primary-button-outline {
+    margin: 0 0.5rem 0 0;
+    min-width: 8rem;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.25rem;
+    border: 1px solid #ff7676;
+    color: #ff7676;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.primary-button-outline:active {
+    outline: 2px solid #ff7676da;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+.primary-button-outline:focus {
+    outline: 2px solid #ff767680;
+    box-shadow: none;
+    outline-offset: 2px;
+}
