@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { MapService } from 'src/app/services/map.service';
 
 @Component({
@@ -9,16 +10,16 @@ import { MapService } from 'src/app/services/map.service';
 export class NearbyComponent implements OnInit {
 
   listLocaion: any = []
+  listMarker: any = []
+
+  @ViewChild(GoogleMap, { static: false }) googleMap!: GoogleMap;
+  @ViewChild(MapInfoWindow, { static: false }) infoWindow!: MapInfoWindow;
 
   options: google.maps.MapOptions = {
     zoomControl: true,
-    scrollwheel: false,
-    streetViewControl: false,
-    fullscreenControl: false,
-    disableDoubleClickZoom: true,
-    mapTypeControl: false,
-    center: { lat: 13.723784979498301, lng: 100.74317612937757 },
-
+    disableDefaultUI: true,
+    center: { lat: 13.74278137660458, lng: 100.538634066753 },
+    zoom: 12,
     maxZoom: 15,
     minZoom: 0,
   };
@@ -31,14 +32,9 @@ export class NearbyComponent implements OnInit {
     this.getLocation()
   }
 
-  getMarker(value: any) {
-
-  }
-
   getLocation() {
     this.mapService.getAll().subscribe(res => {
       this.listLocaion = res
-      this.getMarker(res)
     })
   }
 
@@ -51,6 +47,10 @@ export class NearbyComponent implements OnInit {
     else {
       this.getLocation()
     }
+  }
+
+  openInfo(marker: MapMarker, content: any) {
+    this.infoWindow.open(marker);
   }
 
   viewDetail(value: any) {

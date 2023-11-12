@@ -7,6 +7,26 @@
 
   <div class="w-full h-30rem">
     <google-map height="100%" width="100%" [options]="options">
+      <map-marker
+        #mark="mapMarker"
+        *ngFor="let marker of listLocaion let i = index"
+        [position]="{ lat: marker.latitude, lng: marker.longitude }"
+        [label]="marker.label"
+        [title]="marker.title"
+        [options]="marker.options"
+        (mapClick)="openInfo(mark, i)">
+        <map-info-window>
+          <div class="text-lg font-bold">
+            {{ marker.name }}
+          </div>
+          <div>
+            {{ marker.description }}
+          </div>
+          <div>
+            เบอร์ติดต่อ: {{ marker.contact_phone }}
+          </div>
+        </map-info-window>
+      </map-marker>
     </google-map>
   </div>
 
@@ -26,6 +46,9 @@
               </div>
               <div class="text-lg">
                 {{ item.description }}
+              </div>
+              <div class="text-gray-500">
+                เบอร์ติดต่อ: {{ item.contact_phone }}
               </div>
             </div>
             <div>
