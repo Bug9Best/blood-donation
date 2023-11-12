@@ -45,5 +45,18 @@ input {
 
 .p-progressbar .p-progressbar-value {
     background-image: linear-gradient(to right, #d75851 0%, #FB8983 80%);
+}
 
+.floatButton {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+    width: 4rem;
+    height: 4rem;
+    background-image: linear-gradient(to right, #d75851 0%, #FB8983 80%);
+}
+
+.floatButton:hover {
+    background-image: linear-gradient(to right, hsla(3, 63%, 58%, 0.8) 0%, rgba(255, 168, 163, 0.8) 80%);
 }

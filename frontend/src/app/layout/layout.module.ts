@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { PrimeNGModule } from '../modules/primeng.module';
+import { ChatComponent } from '../component/chat/chat.component';
 
 
 
@@ -29,7 +30,8 @@ import { PrimeNGModule } from '../modules/primeng.module';
     FormsModule,
     PrimeNGModule,
     RouterModule,
-    AppConfigModule
+    AppConfigModule,
+    ChatComponent
   ]
 })
 export class AppLayoutModule { }

@@ -6,9 +6,19 @@
     <div class="layout-main-container">
         <div class="layout-main">
             <router-outlet></router-outlet>
+            <div class="floatButton border-circle flex justify-content-center align-items-center cursor-pointer"
+                (click)="chat.toggle($event)">
+                <i class="pi pi-send text-white text-2xl"></i>
+            </div>
         </div>
         <app-footer></app-footer>
     </div>
     <app-config></app-config>
     <div class="layout-mask"></div>
 </div>
+
+<p-overlayPanel #chat [style]="{'width': '450px', 'min-height':'500px'}" [showCloseIcon]="true">
+    <ng-template pTemplate="content">
+      <app-chat></app-chat>
+    </ng-template>
+</p-overlayPanel>
