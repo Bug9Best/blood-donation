@@ -13,7 +13,7 @@ export class SigninComponent {
   ) { }
 
   signIn() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/appointment']);
   }
 
   signUp() {
