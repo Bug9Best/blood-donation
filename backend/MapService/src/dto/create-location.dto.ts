@@ -12,7 +12,7 @@ export class CreateLocation {
 
     @ApiProperty()
     @IsNumber()
-    longtitude:number;
+    longitude:number;
     
     @ApiProperty()
     @IsNumber()

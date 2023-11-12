@@ -29,10 +29,15 @@ __decorate([
     (0, swagger_1.ApiProperty)(),
     (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
-], CreateLocation.prototype, "longtitude", void 0);
+], CreateLocation.prototype, "longitude", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
     (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], CreateLocation.prototype, "latitude", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateLocation.prototype, "contact_phone", void 0);
 //# sourceMappingURL=create-location.dto.js.map
