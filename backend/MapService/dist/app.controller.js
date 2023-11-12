@@ -27,8 +27,8 @@ let GoogleMapController = class GoogleMapController {
     async createLocation(data) {
         return await this.googleMapService.createLocation(data);
     }
-    async getLocation(name) {
-        return await this.googleMapService.getLocation(name);
+    async getLocation(locationId) {
+        return await this.googleMapService.getLocation(locationId);
     }
     async deleteLocation(locationId) {
         return await this.googleMapService.deleteLocation(locationId);
@@ -49,8 +49,8 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], GoogleMapController.prototype, "createLocation", null);
 __decorate([
-    (0, common_1.Get)(':name'),
-    __param(0, (0, common_1.Param)('name')),
+    (0, common_1.Get)(':locationId'),
+    __param(0, (0, common_1.Param)('locationId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)

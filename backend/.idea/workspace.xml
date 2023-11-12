@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2c452561-39ea-4ebb-9de8-742334c3a1b4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/MapService/dist/google_map/dto/create-location.dto.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/dist/google_map/dto/create-location.dto.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/dist/google_map/dto/create-location.dto.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/dist/google_map/google_map.controller.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/dist/google_map/google_map.controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/dist/google_map/google_map.controller.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/dist/google_map/google_map.module.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/dist/google_map/google_map.module.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/dist/google_map/google_map.module.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/dist/google_map/google_map.service.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/dist/google_map/google_map.service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/dist/google_map/google_map.service.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/MapService/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/MapService/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapService/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/MapService/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/profile/profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/profile/profile.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/profile/profile.module.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2Y2p7mQqOQSz1nLiPIrkLpUb84f" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/bugbest/Desktop/Work Space/KMITL/blood-donation/backend",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "86e4c1df5871348b81ecff6de705f1ef",
+    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/backend/Lab66/frontend/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="BloodbankApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Bloodbank" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Bloodbank.BloodbankApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab66Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Lab66" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.lab66.Lab66Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2c452561-39ea-4ebb-9de8-742334c3a1b4" name="Changes" comment="" />
+      <created>1699733364241</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699733364241</updated>
+      <workItem from="1699733370404" duration="292000" />
+      <workItem from="1699790554891" duration="48000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

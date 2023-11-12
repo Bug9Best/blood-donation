@@ -5,6 +5,6 @@ export declare class GoogleMapController {
     constructor(googleMapService: GoogleMapService);
     getLocations(): Promise<any>;
     createLocation(data: CreateLocation): Promise<any>;
-    getLocation(name: string): Promise<any>;
+    getLocation(locationId: string): Promise<any>;
     deleteLocation(locationId: string): Promise<any>;
 }
