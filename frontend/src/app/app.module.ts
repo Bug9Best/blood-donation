@@ -10,6 +10,7 @@ import { AppLayoutModule } from './layout/layout.module';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { GoogleMapsModule, } from '@angular/google-maps';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import { GoogleMapsModule, } from '@angular/google-maps';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     PrimeNGModule,
     AppLayoutModule,
     GoogleMapsModule,

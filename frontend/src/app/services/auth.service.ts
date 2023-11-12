@@ -5,6 +5,14 @@ import { BaseService } from './base.service';
   providedIn: 'root'
 })
 export class AuthService extends BaseService {
-  public override path: string = 'api-auth';
+  public override path: string = 'auth-service';
+
+  createUser(data: any) {
+    return this.http.post(this.getBaseUrl + '/addUser', data);
+  }
+
+  signin(data: any) {
+    return this.http.post(this.getBaseUrl + '/validatelogin', data);
+  }
 
 }

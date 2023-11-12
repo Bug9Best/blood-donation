@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class UserController {
     private final UserService userService;
@@ -18,6 +19,7 @@ public class UserController {
     }
 
 
+    @CrossOrigin
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<?> createUser(@RequestBody User user) {

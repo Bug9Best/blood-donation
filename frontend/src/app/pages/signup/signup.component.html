@@ -1,1 +1,64 @@
-<p>signup works!</p>
+<div class="flex justify-content-center align-items-center w-full h-screen screen-background">
+  <div class="surface-card p-4 shadow-2 border-round custom-card ">
+    <div class="text-center font-bold text-6xl">
+      <div class="text-custom mb-4">
+        Blood
+        <span class="text-custom2">Donation</span>
+      </div>
+    </div>
+
+    <div [formGroup]="formData">
+      <div class="flex w-full">
+        <div class="w-full">
+          <label for="firstName" class="block required text-900 font-medium mb-2">ชื่อ</label>
+          <input id="firstName" type="text" placeholder="ชื่อ" pInputText class="w-full mb-2 p-inputtext-sm" formControlName="firstName">
+    
+          <label for="lastName" class="block required text-900 font-medium mb-2">นามสกุล</label>
+          <input id="lastName" type="text" placeholder="นามสกุล" pInputText class="w-full mb-2 p-inputtext-sm" formControlName="lastName">
+         
+          <label for="email" class="block required text-900 font-medium mb-2">อีเมล</label>
+          <input id="email" type="email" placeholder="อีเมล" pInputText class="w-full mb-2 p-inputtext-sm" formControlName="email">
+         
+          <label for="password" class="block required text-900 font-medium mb-2">รหัสผ่าน</label>
+          <input id="password" type="password" placeholder="รหัสผ่าน" pInputText class="w-full mb-2 p-inputtext-sm" formControlName="password">
+      
+          <label for="phoneNumber" class="block required text-900 font-medium mb-2">เบอร์โทรศัพท์</label>
+          <input id="phoneNumber" type="text" placeholder="เบอร์โทรศัพท์" pInputText class="w-full mb-2 p-inputtext-sm" formControlName="phoneNumber">
+          
+          <label for="bloodGroup" class="block required text-900 font-medium mb-2">กรุ๊ปเลือด</label>
+          <p-dropdown id="bloodGroup" [options]="listBloodGroup" styleClass="w-full mb-2"  optionValue="name" optionLabel="name" placeholder="-- กรุณาเลือก --" formControlName="bloodGroup"></p-dropdown>
+        </div>
+        
+        <p-divider layout="vertical" class="mt-5"></p-divider>
+
+        <div class="w-full">
+          <label for="gender" class="block required text-900 font-medium mb-2">เพศ</label>
+          <p-dropdown id="gender" [options]="listGender" styleClass="w-full mb-2"  optionValue="name" optionLabel="name" placeholder="-- กรุณาเลือก --" formControlName="gender"></p-dropdown>
+
+          <label for="dateOfBirth" class="block required text-900 font-medium mb-2">วันเดือนปีเกิด</label>
+          <p-calendar id="dateOfBirth" styleClass="w-full mb-2" formControlName="dateOfBirth"></p-calendar>
+    
+          <label for="weight" class="block required text-900 font-medium mb-2">น้ำหนัก</label>
+          <input id="weight" type="text" placeholder="น้ำหนัก" pInputText class="w-full mb-2 p-inputtext-sm" formControlName="weight">
+    
+          <label for="height" class="block required text-900 font-medium mb-2">ส่วนสูง</label>
+          <input id="height" type="text" placeholder="ส่วนสูง" pInputText class="w-full mb-2 p-inputtext-sm" formControlName="height">
+
+          <label for="congenitalDisease" class="block required text-900 font-medium mb-2">โรคประจำตัว</label>
+          <textarea pInputTextarea 
+            class="w-full"
+            rows="4"
+            placeholder="โรคประจำตัว" 
+            formControlName="congenitalDisease">
+          </textarea>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mt-4">
+      <button [disabled]="formData.invalid" pButton pRipple label="สมัครสมาชิก" class="w-full primary-button mb-3" (click)="submit()"></button>
+      <button pButton pRipple label="ยกเลิก" class="w-full primary-button-outline" (click)="signIn()"></button>
+    </div>
+  </div>
+</div>
