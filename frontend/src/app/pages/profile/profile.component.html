@@ -7,72 +7,147 @@
     (onClick)="editProfile()">
   </page-title>
 
-  <div class="grid">
-    <div class="col-3">
-      <label class="required">
-       ชื่อ
-      </label>
-    </div>
-    <div class="col-9">
-      <input type="text">
-    </div>
-  </div>
-
-  <!-- <div class="grid">
-    <div class="col-3">
-      <p-avatar 
-        class="flex justify-content-center"
-        shape="circle" 
-        [style]="{width : '200px', height : '200px'}">
-      </p-avatar>
-      <div class="flex justify-content-center mt-2">
-        <button
-          label="เปลี่ยนรูปประจำตัว" 
-          icon="pi pi-pencil" 
-          class="p-button-primary p-button-rounded p-button-sm" 
-          (onClick)="editProfile()"
-          pButton pRipple>
-        </button>
-      </div>
-    </div>
-
-    <div class="col-9">
-      <div class="grid mb-2">
-        <div class="col-12 font-bold">
-          คำนำหน้าชื่อ
-        </div>
-        <div class="col-12 -mt-2">
-          <input type="text" pInputText>
-        </div>
-      </div>
-
-      <div class="grid mb-2">
-        <div class="col-12 font-bold">
+  <ng-container *ngIf="editMode">
+    <div [formGroup]="formData">
+      <div class="grid">
+        <div class="col-2">
+          <label class="required">
           ชื่อ
+          </label>
         </div>
-        <div class="col-12 -mt-2">
-          <input type="text" pInputText>
-        </div>
-      </div>
-
-      <div class="grid mb-2">
-        <div class="col-12 font-bold">
-          ชื่อกลาง (ถ้ามี)
-        </div>
-        <div class="col-12 -mt-2">
-          <input type="text" pInputText>
+        <div class="col-10">
+          <input pInputText 
+            type="text"
+            placeholder="ชื่อ"
+            formControlName="firstName">
         </div>
       </div>
 
-
-      <div class="grid mb-2">
-        <div class="col-12 font-bold">
+      <div class="grid">
+        <div class="col-2">
+          <label class="required">
           นามสกุล
+          </label>
         </div>
-        <div class="col-12 -mt-2">
-          <input type="text" pInputText>
+        <div class="col-10">
+          <input pInputText 
+            type="text"
+            placeholder="นามสกุล"
+            formControlName="lastName">
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-2">
+          <label class="required">
+          อีเมล
+          </label>
+        </div>
+        <div class="col-10">
+          <input pInputText 
+            type="email"
+            placeholder="อีเมล"
+            formControlName="email">
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-2">
+          <label class="required">
+          เบอร์โทรศัพท์
+          </label>
+        </div>
+        <div class="col-10">
+          <input pInputText 
+            type="text" 
+            placeholder="เบอร์โทรศัพท์"
+            formControlName="phoneNumber">
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-2">
+          <label class="required">
+          กรุ๊ปเลือด
+          </label>
+        </div>
+        <div class="col-10">
+          <input pInputText 
+            type="text" 
+            placeholder="กรุ๊ปเลือด"
+            formControlName="bloodGroup">
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-2">
+          <label class="required">
+          เพศ
+          </label>
+        </div>
+        <div class="col-10">
+          <input   pInputText 
+            type="text" 
+            placeholder="เพศ"
+            formControlName="gender">
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-2">
+          <label class="required">
+          วันเดือนปีเกิด
+          </label>
+        </div>
+        <div class="col-10">
+          <input pInputText 
+            type="text" 
+            placeholder="วันเดือนปีเกิด"
+            formControlName="dateOfBirth">
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-2">
+          <label class="required">
+          น้ำหนัก
+          </label>
+        </div>
+        <div class="col-10">
+          <input pInputText 
+            type="text" 
+            placeholder="น้ำหนัก"
+            formControlName="weight">
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-2">
+          <label class="required">
+          ส่วนสูง
+          </label>
+        </div>
+        <div class="col-10">
+          <input pInputText 
+            type="text" 
+            placeholder="ส่วนสูง"
+            formControlName="height">
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-2">
+          <label class="required">
+          โรคประจำตัว
+          </label>
+        </div>
+        <div class="col-10">
+          <input pInputText 
+            type="text" 
+            placeholder="โรคประจำตัว"
+            formControlName="congenitalDisease">
         </div>
       </div>
     </div>
-  </div> -->
+  </ng-container>
 </div>
