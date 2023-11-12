@@ -1,11 +1,9 @@
-package com.example.Bloodbank.core.events;
+package com.example.Bloodbank.command.rest;
 
 import lombok.Data;
-import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @Data
-public class BloodbankCreatedEvent {
-    private String _id;
+public class UpdateBloodbankRestModel {
     private String name;
     private String address;
     private String contact_phone;

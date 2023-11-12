@@ -1,10 +1,9 @@
 package com.example.Bloodbank.core.events;
 
 import lombok.Data;
-import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @Data
-public class BloodbankCreatedEvent {
+public class BloodbankUpdatedEvent {
     private String _id;
     private String name;
     private String address;
