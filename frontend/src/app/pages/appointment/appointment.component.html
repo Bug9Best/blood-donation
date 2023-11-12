@@ -1,3 +1,54 @@
 <div class="content-conatiner">
-    <p>appointment works!</p>
+  <page-title [title]="'นัดหมายการบริจาคเลือด'"></page-title>
+  <ng-container *ngIf="curretstep == 0">
+    <div class="shadow-2 border-round-md p-3 py-5">
+      <div class="flex flex-column align-items-center">
+        <div class="text-3xl font-bold">
+          คำแนะนำ
+        </div>
+        <div class="text-3xl font-bold">
+          สำหรับผู้ประสงค์บริจาคเลือด
+        </div>
+
+        <div class="mt-2 text-lg">
+          <div class="flex justify-content-center">
+            <img src="assets/img/blood.png" height="280">
+          </div>
+          <div class="mt-2">
+            1. หากท่านรู้สึกไม่สบาย ควรพักผ่อน ดูแลสุขภาพให้แข็งแรง เพื่อให้มีความพร้อมสำหรับการบริจาคเลือด
+          </div>
+          <div class="mt-2">
+            2. ควรนอนหลับพักผ่อนอย่างน้อย 5 ชั่วโมง ก่อนการบริจาคเลือด
+          </div>
+          <div class="mt-2">
+            3. รับประทานอาหารภายใน 4 ชั่วโมง ก่อนการบริจาคเลือด
+          </div>
+          <p-divider></p-divider>
+          <div>
+            <button pButton pRipple
+              label="ตอบแบบสอบถามเพื่อทำการนัดหมาย"
+              class="w-full primary-button font-bold text-lg"
+              (click)="toQuestion()">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="curretstep == 1">
+    <appointment-question 
+      [currentQuestion]="currentQuestion"
+      (onChangeQuestion)="showQuestion($event)"
+      (onFinishQuestion)="toAppointment()"
+      (onCancelQuestion)="cancelQuestion()">
+    </appointment-question>   
+  </ng-container>
+
+  <ng-container *ngIf="curretstep == 2">
+    <appointment-form 
+      (onSave)="createAppointment($event)"
+      (onCancel)="cancelQuestion()">
+    </appointment-form>
+  </ng-container>
 </div>
