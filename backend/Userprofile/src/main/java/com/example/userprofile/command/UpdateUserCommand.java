@@ -1,9 +1,14 @@
-package com.example.userprofile.command.rest;
+package com.example.userprofile.command;
 
+import lombok.Builder;
 import lombok.Data;
+import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @Data
-public class CreateUserRestModel {
+@Builder
+public class UpdateUserCommand {
+    @TargetAggregateIdentifier
+    private final String _id;
     private String firstname;
     private String lastname;
     private String email;

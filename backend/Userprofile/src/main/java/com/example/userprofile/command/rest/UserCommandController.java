@@ -1,13 +1,11 @@
 package com.example.userprofile.command.rest;
 
 import com.example.userprofile.command.CreateUserCommand;
+import com.example.userprofile.command.UpdateUserCommand;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -27,7 +25,6 @@ public class UserCommandController {
     @PostMapping
     public String createUser(@RequestBody CreateUserRestModel model){
         CreateUserCommand command = CreateUserCommand.builder()
-                ._id(UUID.randomUUID().toString())
                 .firstname(model.getFirstname())
                 .lastname(model.getLastname())
                 .email(model.getEmail())
@@ -45,6 +42,33 @@ public class UserCommandController {
         try {
             result = commandGateway.sendAndWait(command);
         }catch (Exception e){
+            result = e.getLocalizedMessage();
+        }
+        return result;
+    }
+    @PutMapping
+    public String updateUser(@RequestBody UpdateUserRestModel model){
+        UpdateUserCommand command = UpdateUserCommand.builder()
+                ._id(model.getId())
+                .firstname(model.getFirstname())
+                .lastname(model.getLastname())
+                .email(model.getEmail())
+                .phoneNumber(model.getPhoneNumber())
+                .bloodGroup(model.getBloodGroup())
+                .gender(model.getGender())
+                .dateOfBirth(model.getDateOfBirth())
+                .weight(model.getWeight())
+                .height(model.getHeight())
+                .congenitalDisease(model.getCongenitalDisease())
+                .userImage(model.getUserImage())
+                .role(model.getRole())
+                .build();
+
+        String result;
+        System.out.println(command);
+        try {
+            result = commandGateway.sendAndWait(command);
+        } catch (Exception e){
             result = e.getLocalizedMessage();
         }
         return result;

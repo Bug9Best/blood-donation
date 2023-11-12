@@ -1,9 +1,10 @@
-package com.example.userprofile.command.rest;
+package com.example.userprofile.core.event;
 
 import lombok.Data;
 
 @Data
-public class CreateUserRestModel {
+public class UserUpdatedEvent {
+    private String _id;
     private String firstname;
     private String lastname;
     private String email;

@@ -3,6 +3,7 @@ package com.example.userprofile.query;
 import com.example.userprofile.core.data.UserEntity;
 import com.example.userprofile.core.data.UserprofileRepository;
 import com.example.userprofile.core.event.UserCreatedEvent;
+import com.example.userprofile.core.event.UserUpdatedEvent;
 import com.fasterxml.jackson.databind.util.BeanUtil;
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.beans.BeanUtils;
@@ -18,6 +19,13 @@ public class UserEventHandler {
 
     @EventHandler
     public void on(UserCreatedEvent event) {
+        UserEntity userEntity = new UserEntity();
+        BeanUtils.copyProperties(event, userEntity);
+        userprofileRepository.save(userEntity);
+    }
+
+    @EventHandler
+    public void on(UserUpdatedEvent event) {
         UserEntity userEntity = new UserEntity();
         BeanUtils.copyProperties(event, userEntity);
         userprofileRepository.save(userEntity);

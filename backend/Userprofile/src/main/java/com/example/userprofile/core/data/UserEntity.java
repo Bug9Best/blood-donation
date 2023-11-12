@@ -1,22 +1,15 @@
 package com.example.userprofile.core.data;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.io.Serial;
 import java.io.Serializable;
 
-@Entity
 @Data
-@Table(name = "users")
+@Document("users")
 public class UserEntity implements Serializable {
-    @Serial
-    private static final long serialVersionUID = 7518387449887261245L;
     @Id
-    @Column
     private String _id;
     private String firstname;
     private String lastname;

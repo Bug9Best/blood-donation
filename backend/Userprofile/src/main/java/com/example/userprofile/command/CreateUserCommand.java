@@ -8,7 +8,7 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 @Data
 public class CreateUserCommand {
     @TargetAggregateIdentifier
-    private String _id;
+    private final String _id;
     private String firstname;
     private String lastname;
     private String email;

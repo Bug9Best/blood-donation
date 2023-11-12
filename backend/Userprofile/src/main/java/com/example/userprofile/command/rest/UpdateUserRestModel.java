@@ -3,7 +3,8 @@ package com.example.userprofile.command.rest;
 import lombok.Data;
 
 @Data
-public class CreateUserRestModel {
+public class UpdateUserRestModel {
+    private String id;
     private String firstname;
     private String lastname;
     private String email;
