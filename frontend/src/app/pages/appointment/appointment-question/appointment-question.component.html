@@ -1,0 +1,68 @@
+<div class="grid">
+  <div class="col-8 col-offset-2">
+    <div class="flex flex-column align-items-center">
+      <div class="text-center text-4xl font-bold">
+        คำถามที่ {{ currentQuestion +1 }}/{{ listQuestion.length }}
+      </div>
+
+      <div class="flex justify-content-center">
+        <img src="https://media4.giphy.com/media/PgjFfiSWV5DEsXZq61/giphy.gif?cid=6c09b952inbfhxqhhrxl93s0epydlxbmvbiq2aoea49dy384&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" height="180">
+      </div>
+
+      <div class="question-box w-full">
+        <div class="flex flex-column">
+          <div class="text-xl">
+            {{ listQuestion[currentQuestion].question }}      
+          </div>
+          <div class="flex justify-content-center mt-5">
+            <div class="text-center shadow-2 border-round-md m-2 p-3 w-10rem cursor-pointer"
+              [ngClass]="{'selected-question': selectedAnswer === listQuestion[currentQuestion].answer[0].id}"
+              (click)="chooseAnswer(listQuestion[currentQuestion], 1)">
+              {{listQuestion[currentQuestion].answer[0].text}}
+            </div>
+            <div class="text-center shadow-2 border-round-md m-2 p-3 w-10rem cursor-pointer"
+              [ngClass]="{'selected-question': selectedAnswer === listQuestion[currentQuestion].answer[1].id}"
+              (click)="chooseAnswer(listQuestion[currentQuestion], 2)">
+              {{listQuestion[currentQuestion].answer[1].text}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p-divider class="w-full"></p-divider>
+            
+      <div class="flex w-full">
+        <ng-container *ngIf="currentQuestion > 0; else cancleQuestion">
+          <button pButton 
+            class="w-full primary-button-outline"
+            label="คำถามข้อก่อนหน้า"
+            (click)="changeQuestion('previous')">
+          </button>
+        </ng-container>
+        <ng-template #cancleQuestion>
+          <button pButton 
+            class="w-full primary-button-outline"
+            label="ยกเลิก"
+            (click)="changeQuestion('previous')">
+          </button>
+        </ng-template>
+
+        <ng-container *ngIf="currentQuestion < listQuestion.length - 1; else finishQuestion">
+          <button pButton 
+            [disabled]="disableNext"
+            class="w-full primary-button"
+            label="คำถามข้อถัดไป"
+            (click)="changeQuestion('next')">
+          </button>
+        </ng-container>
+        <ng-template #finishQuestion>
+          <button pButton 
+            class="w-full primary-button"
+            label="เสร็จสิ้น"
+            (click)="changeQuestion('finish')">
+          </button>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
