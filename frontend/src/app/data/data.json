@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "โรงพยาบาลทดสอบ",
+        "address": "ทดสอบ",
+        "lat": 13.7563,
+        "lng": 100.5018,
+        "contact_phone": "123456789",
+        "blood": [
+            {
+                "id": 1,
+                "blood_group": "A (เอ)",
+                "blood_already": 5,
+                "blood_required": 10
+            },
+            {
+                "id": 2,
+                "blood_group": "B (บี)",
+                "blood_already": 5,
+                "blood_required": 10
+            },
+            {
+                "id": 3,
+                "blood_group": "AB (เอบี)",
+                "blood_already": 5,
+                "blood_required": 10
+            },
+            {
+                "id": 4,
+                "blood_group": "O(โอ)",
+                "blood_already": 5,
+                "blood_required": 10
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Jane",
+        "age": 25
+    },
+    {
+        "id": 3,
+        "name": "Jim",
+        "age": 40
+    }
+]

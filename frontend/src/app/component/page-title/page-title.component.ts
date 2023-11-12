@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PrimeNGModule } from 'src/app/modules/primeng.module';
 
 @Component({
@@ -15,4 +15,12 @@ import { PrimeNGModule } from 'src/app/modules/primeng.module';
 export class PageTitleComponent {
 
   @Input() title: string = 'Default Title';
+  @Input() label: string = 'Default label';
+  @Input() icon: string = 'pi pi-home';
+  @Input() showButton: boolean = false;
+
+  @Output() onClick: EventEmitter<any> = new EventEmitter();
+  eventHandle() {
+    this.onClick.emit();
+  }
 }
