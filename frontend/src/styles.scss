@@ -7,6 +7,18 @@
 
 @import "assets/layout/styles/layout/layout.scss";
 
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Kanit', sans-serif;
+}
+
 .content-conatiner {
     background-color: white;
     border: 1px solid #e6e6e6;
@@ -19,4 +31,14 @@
 
 input {
     width: 100%;
+}
+
+.required::after {
+    content: "*";
+    color: red;
+}
+
+.reverse-background {
+    color: white;
+    background-color: #d75851;
 }
