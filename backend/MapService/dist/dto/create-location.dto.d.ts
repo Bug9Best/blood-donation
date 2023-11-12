@@ -3,4 +3,5 @@ export declare class CreateLocation {
     description: string;
     longtitude: number;
     latitude: number;
+    phone_number: string;
 }
