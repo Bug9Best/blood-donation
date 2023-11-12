@@ -8,9 +8,8 @@ import { MapService } from 'src/app/services/map.service';
 })
 export class NearbyComponent implements OnInit {
 
-  listArea: any = [
-    1, 2, 3, 4, 5, 6
-  ]
+  listArea: any = []
+  listAreaTemp: any = []
 
   options: google.maps.MapOptions = {
     zoomControl: true,
@@ -31,12 +30,20 @@ export class NearbyComponent implements OnInit {
 
   ngOnInit(): void {
     this.mapService.getAll().subscribe(res => {
-      console.log(res);
+      this.listArea = res
+      this.listAreaTemp = res
     })
   }
 
   onSearch(keyWord: string) {
-    console.log(keyWord);
+    if (keyWord) {
+      this.listArea = this.listAreaTemp.filter((item: any) => {
+        return item.name.toLowerCase().includes(keyWord.toLowerCase())
+      })
+    }
+    else {
+      this.listArea = this.listAreaTemp
+    }
   }
 
 }
