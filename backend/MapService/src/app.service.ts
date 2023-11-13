@@ -9,7 +9,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 @Injectable()
 export class GoogleMapService {
   //import service
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) { }
 
   async getLocations(): Promise<any> {
     return await this.prisma.location.findMany();
