@@ -5,5 +5,9 @@ import { BaseService } from './base.service';
   providedIn: 'root'
 })
 export class AppointmentService extends BaseService {
-  public override path: string = 'api-appointment';
+  public override path: string = 'appointment-service';
+
+  createAppointment(data: any) {
+    return this.http.post(this.getBaseUrl + '/appointment/create',data);
+  }
 }

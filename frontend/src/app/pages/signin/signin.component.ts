@@ -24,19 +24,20 @@ export class SigninComponent {
 
   signIn() {
     let values = this.formData.value;
-    this.authService.signin(values).subscribe({
-      next: (res) => {
-        localStorage.setItem('user', JSON.stringify(res));
-        this.router.navigate(['/appointment']);
-      },
-      error: (err) => {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'เกิดข้อผิดพลาด',
-          detail: err.error.message
-        });
-      }
-    });
+    this.router.navigate(['/appointment']);
+    // this.authService.signin(values).subscribe({
+    //   next: (res) => {
+    //     localStorage.setItem('user', JSON.stringify(res));
+    //     this.router.navigate(['/appointment']);
+    //   },
+    //   error: (err) => {
+    //     this.messageService.add({
+    //       severity: 'error',
+    //       summary: 'เกิดข้อผิดพลาด',
+    //       detail: err.error.message
+    //     });
+    //   }
+    // });
   }
 
   signUp() {

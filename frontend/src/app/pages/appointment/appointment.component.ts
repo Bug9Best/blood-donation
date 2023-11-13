@@ -13,7 +13,7 @@ export enum StepAppoint {
   styleUrls: ['./appointment.component.scss']
 })
 export class AppointmentComponent {
-  curretstep: StepAppoint = StepAppoint.Appointment;
+  curretstep: StepAppoint = StepAppoint.Defalut;
   currentQuestion: number = 0;
 
   constructor(
@@ -47,6 +47,7 @@ export class AppointmentComponent {
   }
 
   createAppointment(value: any) {
+    this.curretstep = StepAppoint.Defalut;
     this.showMessages('success', 'Agendamento', 'Agendamento realizado com sucesso!');
   }
 }

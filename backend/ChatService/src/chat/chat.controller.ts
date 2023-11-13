@@ -6,12 +6,12 @@ import { ChatService } from './chat.service';
 export class ChatController {
   constructor(private readonly chatService: ChatService) {}
 
-  @Get(':userId')
+  @Get('/:userId')
   async getMessage(@Param('userId') userId: string) {
     return this.chatService.getMessage(userId);
   }
 
-  @Post()
+  @Post('/send')
   async createMessage(@Body() createDto: CreateChatDto) {
     return this.chatService.createMessage(createDto);
   }

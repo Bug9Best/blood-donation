@@ -29,14 +29,14 @@ let ChatController = class ChatController {
 };
 exports.ChatController = ChatController;
 __decorate([
-    (0, common_1.Get)(':userId'),
+    (0, common_1.Get)('/:userId'),
     __param(0, (0, common_1.Param)('userId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], ChatController.prototype, "getMessage", null);
 __decorate([
-    (0, common_1.Post)(),
+    (0, common_1.Post)('/send'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_chat_dto_1.CreateChatDto]),

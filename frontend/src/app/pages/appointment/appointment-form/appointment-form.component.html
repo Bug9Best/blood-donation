@@ -2,7 +2,7 @@
 <div [formGroup]="formData">
   <div class="grid">
     <div class="col-2">
-      <label class="required">
+      <label>
         ชื่อ
       </label>
     </div>
@@ -10,37 +10,55 @@
       <input pInputText 
         type="text" 
         placeholder="ชื่อ"
-        formControlName="first_name">
+        readonly
+        formControlName="firstname">
     </div>
   </div>
 
   <div class="grid">
     <div class="col-2">
-      <label class="required">
+      <label>
         นามสกุล
       </label>
     </div>
     <div class="col-10">
       <input pInputText 
         type="text" 
+        readonly
         placeholder="นามสกุล"
-        formControlName="last_name">
+        formControlName="lastname">
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-2">
+      <label>
+        กรุ๊ปเลือด
+      </label>
+    </div>
+    <div class="col-10">
+      <input pInputText 
+        type="text" 
+        readonly
+        placeholder="กรุ๊ปเลือด"
+        formControlName="bloodGroup">
     </div>
   </div>
 
   <div class="grid">
     <div class="col-2">
       <label class="required">
-        เลขบัตรประชาชน
+        สถานที่รับบริจาคเลือด
       </label>
     </div>
     <div class="col-10">
-      <p-inputMask 
-        mask="9-9999-99999-99-9"  
-        placeholder="เลขบัตรประชาชน"
-        [unmask]="true"
-        formControlName="citizen_id">
-      </p-inputMask>
+      <p-dropdown 
+      styleClass="w-full"
+        [options]="listLocation"  
+        placeholder="-- กรุณาเลือก --" 
+        optionLabel="name" optionValue="name" 
+        formControlName="location">
+      </p-dropdown>
     </div>
   </div>
 

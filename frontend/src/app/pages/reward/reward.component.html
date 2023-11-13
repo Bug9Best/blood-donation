@@ -28,26 +28,26 @@
   <p-divider></p-divider>
 
   <div class="shadow-2 border-round-md p-3 flex justify-content-start">
-    <p-timeline [value]="events" styleClass="customized-timeline">
+    <p-timeline [value]="listRewards" styleClass="customized-timeline">
       <ng-template pTemplate="marker" let-event>
-        <span class="custom-marker shadow-2 bg-green-500 border-circle p-1 px-2">
-          <i class="pi pi-gift mt-1" style="font-size: 1rem"></i>
-        </span>
+        <ng-container *ngIf="event.state == 1">
+          <span class="custom-marker shadow-2 bg-green-500 border-circle p-1 px-2">
+            <i class="pi pi-gift mt-1" style="font-size: 1rem"></i>
+          </span>
+        </ng-container>
+        <ng-container *ngIf="event.state == 0">
+          <span class="custom-marker2 shadow-2 bg-gray-500 border-circle p-1 px-2">
+            <i class="pi pi-gift mt-1 text-white" style="font-size: 1rem"></i>
+          </span>
+        </ng-container>
+
       </ng-template>
       <ng-template pTemplate="content" let-event>
         <p-card>
-          <div class="grid">
-            <div class="col-3">
-              <img *ngIf="event.image" [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + event.image"
-                width="200" class="shadow-2" />
-            </div>
-            <div class="col-9">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error
-                repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione
-                quam perferendis esse, cupiditate
-                neque quas!
-              </p>
+          <div class="grid custom-card">
+            <div class="col-12">
+              <div class="text-2xl font-bold">{{ event.title }}</div>
+              <div>{{ event.description }}</div>
             </div>
           </div>
         </p-card>

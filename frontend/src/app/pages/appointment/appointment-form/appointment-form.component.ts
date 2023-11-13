@@ -1,5 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
+import { AppointmentService } from 'src/app/services/appointment.service';
+import { LocationService } from 'src/app/services/location.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'appointment-form',
@@ -7,8 +11,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./appointment-form.component.scss']
 })
 export class AppointmentFormComponent implements OnInit {
-
+  currentUserId: string = JSON.parse(localStorage.getItem('user') || '{}');
   selectedTime?: number;
+  listLocation: any[] = [];
 
   listTime: any[] = [
     { id: 1, time: '09:00' },
@@ -26,30 +31,86 @@ export class AppointmentFormComponent implements OnInit {
   ]
 
   formData: FormGroup = new FormGroup({
-    first_name: new FormControl('', Validators.required),
-    last_name: new FormControl('', Validators.required),
-    citizen_id: new FormControl('', Validators.required),
+    userid: new FormControl(''),
+    firstname: new FormControl('', Validators.required),
+    lastname: new FormControl('', Validators.required),
+    bloodGroup: new FormControl('', Validators.required),
+    location: new FormControl('', Validators.required),
     date: new FormControl(new Date(), Validators.required),
-    time: new FormControl('', Validators.required),
+    appointment: new FormControl('', Validators.required),
   });
 
-  constructor() { }
+  constructor(
+    private messageService: MessageService,
+    private userService: UserService,
+    private appointmentService: AppointmentService,
+    private locationService: LocationService,
+  ) { }
 
   ngOnInit(): void {
-    localStorage.setItem('user', JSON.stringify(this.listTime));
+    if (this.currentUserId) {
+      this.getUser();
+      this.getLocations();
+    }
+  }
+
+  getUser() {
+    this.userService.getUser().subscribe((res: any) => {
+      let user = res.find((item: any) => item._id == this.currentUserId);
+      if (user) {
+        this.formData.patchValue({
+          firstname: user.firstname,
+          lastname: user.lastname,
+          bloodGroup: user.bloodGroup,
+        })
+      }
+    });
+  }
+
+  getLocations() {
+    this.locationService.getAll().subscribe((res: any) => {
+      console.log(res);
+      this.listLocation = res;
+    });
   }
 
   onSelectedTime(time: any) {
     this.selectedTime = time.id
-    this.formData.patchValue({ time: time.time })
+    this.formData.patchValue({ appointment: time.time })
   }
 
   @Output() onSave: EventEmitter<any> = new EventEmitter<any>();
   @Output() onCancel: EventEmitter<any> = new EventEmitter<any>();
   save() {
-    let values = this.formData.value;
-    values.time = this.selectedTime;
-    this.onSave.emit(values);
+    this.messageService.add({
+      key: 'app',
+      severity: 'success',
+      summary: 'สำเร็จ',
+      detail: 'บันทึกข้อมูลสำเร็จ'
+    });
+    this.onSave.emit();
+    // let values = this.formData.value;
+    // values.userid = this.currentUserId;
+    // this.appointmentService.createAppointment(values).subscribe({
+    //   next: (res: any) => {
+    //     this.messageService.add({
+    //       key: 'app',
+    //       severity: 'success',
+    //       summary: 'สำเร็จ',
+    //       detail: 'บันทึกข้อมูลสำเร็จ'
+    //     });
+    //     this.onSave.emit();
+    //   },
+    //   error: (err: any) => {
+    //     this.messageService.add({
+    //       key: 'app',
+    //       severity: 'error',
+    //       summary: 'Error',
+    //       detail: err.message
+    //     });
+    //   },
+
+    // });
   }
 
   cancel() {

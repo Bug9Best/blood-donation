@@ -41,7 +41,7 @@ export class ChatService {
             createdAt: true,
           },
           orderBy: {
-            createdAt: 'desc',
+            createdAt: 'asc',
           },
         });
 

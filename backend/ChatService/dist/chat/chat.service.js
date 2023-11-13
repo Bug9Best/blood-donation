@@ -44,7 +44,7 @@ let ChatService = class ChatService {
                     createdAt: true,
                 },
                 orderBy: {
-                    createdAt: 'desc',
+                    createdAt: 'asc',
                 },
             });
             return {

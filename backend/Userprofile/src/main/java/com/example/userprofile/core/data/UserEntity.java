@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.io.Serializable;
 
 @Data
-@Document("users")
+@Document("User")
 public class UserEntity implements Serializable {
     @Id
     private String _id;
