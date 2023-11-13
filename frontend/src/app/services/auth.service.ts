@@ -8,7 +8,7 @@ export class AuthService extends BaseService {
   public override path: string = 'auth-service';
 
   createUser(data: any) {
-    return this.http.post("http://localhost:3004/auths/addUser", data);
+    return this.http.post("http://localhost:3004/auths/create-user", data);
   }
 
   signin(data: any) {

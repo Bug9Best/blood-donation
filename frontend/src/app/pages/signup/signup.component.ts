@@ -66,17 +66,14 @@ export class SignupComponent implements OnInit {
 
   submit() {
     let values = this.formData.value;
-    this.authService.createUser(values).subscribe(
-      {
-        next: (res) => {
-          this.messageService.add({
-            severity: 'success',
-            summary: 'สำเร็จ!',
-            detail: 'สมัครสมาชิกสำเร็จ'
-          });
-        },
-      }
-    );
+    this.authService.createUser(values).subscribe((res: any) => {});
+    this.router.navigate(['/signin']);
+    this.messageService.add({
+      key: 'app',
+      severity: 'success',
+      summary: 'สำเร็จ!',
+      detail: 'สมัครสมาชิกสำเร็จ'
+    });
   }
 
   signIn() {

@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./appointment-form.component.scss']
 })
 export class AppointmentFormComponent implements OnInit {
-  currentUserId: string = JSON.parse(localStorage.getItem('user') || '{}');
+  currentUser: any = JSON.parse(localStorage.getItem('user') || '{}');
   selectedTime?: number;
   listLocation: any[] = [];
 
@@ -48,7 +48,7 @@ export class AppointmentFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    if (this.currentUserId) {
+    if (this.currentUser) {
       this.getUser();
       this.getLocations();
     }
@@ -56,7 +56,8 @@ export class AppointmentFormComponent implements OnInit {
 
   getUser() {
     this.userService.getUser().subscribe((res: any) => {
-      let user = res.find((item: any) => item._id == this.currentUserId);
+      let user = res.find((item: any) => item._id == this.currentUser._id);
+      console.log(user);
       if (user) {
         this.formData.patchValue({
           firstname: user.firstname,
@@ -68,7 +69,7 @@ export class AppointmentFormComponent implements OnInit {
   }
 
   getLocations() {
-    this.locationService.getAll().subscribe((res: any) => {
+    this.locationService.getLocation().subscribe((res: any) => {
       console.log(res);
       this.listLocation = res;
     });
@@ -82,35 +83,29 @@ export class AppointmentFormComponent implements OnInit {
   @Output() onSave: EventEmitter<any> = new EventEmitter<any>();
   @Output() onCancel: EventEmitter<any> = new EventEmitter<any>();
   save() {
-    this.messageService.add({
-      key: 'app',
-      severity: 'success',
-      summary: 'สำเร็จ',
-      detail: 'บันทึกข้อมูลสำเร็จ'
-    });
-    this.onSave.emit();
-    // let values = this.formData.value;
-    // values.userid = this.currentUserId;
-    // this.appointmentService.createAppointment(values).subscribe({
-    //   next: (res: any) => {
-    //     this.messageService.add({
-    //       key: 'app',
-    //       severity: 'success',
-    //       summary: 'สำเร็จ',
-    //       detail: 'บันทึกข้อมูลสำเร็จ'
-    //     });
-    //     this.onSave.emit();
-    //   },
-    //   error: (err: any) => {
-    //     this.messageService.add({
-    //       key: 'app',
-    //       severity: 'error',
-    //       summary: 'Error',
-    //       detail: err.message
-    //     });
-    //   },
+  
+    let values = this.formData.value;
+    values.userid = this.currentUser._id;
+    this.appointmentService.createAppointment(values).subscribe({
+      next: (res: any) => {
+        this.messageService.add({
+          key: 'app',
+          severity: 'success',
+          summary: 'สำเร็จ',
+          detail: 'บันทึกข้อมูลสำเร็จ'
+        });
+        this.onSave.emit();
+      },
+      error: (err: any) => {
+        this.messageService.add({
+          key: 'app',
+          severity: 'error',
+          summary: 'Error',
+          detail: err.message
+        });
+      },
 
-    // });
+    });
   }
 
   cancel() {

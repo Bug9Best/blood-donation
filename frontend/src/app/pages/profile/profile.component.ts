@@ -7,6 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
+  currentUser = JSON.parse(localStorage.getItem('user') || '{}');
   editMode: boolean = false;
 
   formData: FormGroup = new FormGroup({

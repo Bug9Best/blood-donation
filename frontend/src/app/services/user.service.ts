@@ -8,7 +8,7 @@ export class UserService extends BaseService {
   public override path: string = 'user-service';
 
   getUser() {
-    return this.http.get(this.getBaseUrl + '/users');
+    return this.http.get(this.getBaseUrl + ':3005/users');
   }
 }
 
