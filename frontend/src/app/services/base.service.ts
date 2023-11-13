@@ -14,7 +14,7 @@ export class BaseService {
     ) { }
 
     get getBaseUrl(): string {
-        return this.baseUrl + '/' + this.path;
+        return this.baseUrl;
     }
 
     getAll() {

@@ -8,6 +8,6 @@ export class BloodBankService extends BaseService {
   public override path: string = 'bloodbank-service';
 
   getBloodBank() {
-    return this.http.get(this.getBaseUrl + '/bloodbanks');
+    return this.http.get(this.getBaseUrl + ':3002/bloodbanks');
   }
 }

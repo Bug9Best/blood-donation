@@ -24,6 +24,8 @@ export class AppTopBarComponent {
           label: 'ออกจากระบบ',
           icon: 'pi pi-sign-out',
           command: () => {
+            localStorage.removeItem('user');
+            this.router.navigate(['/signin']);
           }
         }
       ]

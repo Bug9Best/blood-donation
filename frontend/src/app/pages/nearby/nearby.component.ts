@@ -35,7 +35,7 @@ export class NearbyComponent implements OnInit {
   }
 
   getLocation() {
-    this.locationService.getAll().subscribe(res => {
+    this.locationService.getLocation().subscribe(res => {
       this.listLocaion = res
     })
   }

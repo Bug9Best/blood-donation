@@ -8,11 +8,11 @@ export class ChatService extends BaseService {
   public override path: string = 'chat-service';
 
   getMessage(id: string) {
-    return this.http.get("http://localhost:3001/chat/65514ea003ba6a6addc4ba6c");
+    return this.http.get(this.getBaseUrl + ":3001/chat/" + id);
   }
 
   sendMessage(data: any) {
-    return this.http.post("http://localhost:3001/chat/send", data);
+    return this.http.post(this.getBaseUrl + ":3001/chat/send", data);
   }
 
 }

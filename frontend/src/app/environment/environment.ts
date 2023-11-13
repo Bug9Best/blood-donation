@@ -2,7 +2,7 @@ export const environment = {
   production: false,
   baseUrl: "/api",
 
-  apiUrl: "http://localhost:8082",
+  apiUrl: "http://localhost",
   clientId: "528531459183-udui3pqk4ooq0mm03gc1hss3tom4c1pa.apps.googleusercontent.com",
   appId: "297110276439186",
 

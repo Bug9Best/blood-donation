@@ -6,4 +6,8 @@ import { BaseService } from './base.service';
 })
 export class LocationService extends BaseService {
   public override path: string = 'api-location';
+
+  getLocation() {
+    return this.http.get(this.getBaseUrl + ":3000");
+  }
 }

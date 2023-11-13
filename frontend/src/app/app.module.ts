@@ -12,6 +12,9 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { GoogleMapsModule, } from '@angular/google-maps';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CorsInterceptor } from './services/http-interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +34,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   providers: [
     MessageService,
     ConfirmationService,
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: CorsInterceptor,
+    //   multi: true
+    // }
   ],
   bootstrap: [AppComponent]
 })

@@ -32,7 +32,7 @@ export class BloodBankListComponent {
   }
 
   getLocation() {
-    this.locationService.getAll().subscribe(res => {
+    this.locationService.getLocation().subscribe(res => {
       this.listLocaion = res
     })
   }
